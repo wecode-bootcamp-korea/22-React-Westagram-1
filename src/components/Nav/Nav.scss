@@ -1,0 +1,73 @@
+#navbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 54px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(229, 230, 231);
+  background-color: rgb(255, 255, 255);
+  z-index: 2;
+  .logo {
+    display: flex;
+    align-items: center;
+    margin: 0 80px;
+    .instaLogo {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+    }
+    .separator {
+      height: 38px;
+      margin-right: 20px;
+      border-right: 2px solid black;
+    }
+    .title {
+      text-decoration: none;
+      font-family: "Lobster", cursive;
+      &:visited {
+        color: black;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+  .searchbarContainer {
+    position: relative;
+    .searchbar {
+      width: 220px;
+      height: 12px;
+      padding: 13px;
+      border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+      .searchbar:focus {
+        outline: none;
+      }
+    }
+    .searchfont {
+      position: absolute;
+      top: 6px;
+      left: 100px;
+      color: rgb(229, 230, 231);
+    }
+    .searchIcon {
+      position: absolute;
+      top: 6px;
+      left: 70px;
+      font-size: 15px;
+      color: rgb(229, 230, 231);
+    }
+  }
+  .icons {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    img {
+      width: 22px;
+    }
+  }
+}
