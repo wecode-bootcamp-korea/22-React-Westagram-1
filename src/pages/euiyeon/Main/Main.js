@@ -1,5 +1,5 @@
-import React from "react";
-import Nav from "./components/Nav/Nav";
+import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 
 class MainEuiyeon extends React.Component {
   render() {
