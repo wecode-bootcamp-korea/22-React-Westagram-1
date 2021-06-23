@@ -5,3 +5,8 @@ $bg-color: #fafafa;
 $font-color: #00376b;
 $default-border: 1px solid #dbdbdb;
 $font-gray: #8e8e8e;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+}
