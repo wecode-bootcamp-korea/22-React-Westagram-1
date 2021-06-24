@@ -22,7 +22,12 @@ class Main extends React.Component {
 
   handleKeyEvent = e => {
     if (e.key === 'Enter') {
-      this.addReply();
+      if (!this.state.content) {
+        e.preventDefault();
+        alert('댓글을 입력해주세요!');
+      } else {
+        this.addReply();
+      }
     }
   };
 
@@ -32,6 +37,8 @@ class Main extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    this.setState({ content: '' });
     this.inputRef.current.value = '';
   };
 
@@ -41,6 +48,14 @@ class Main extends React.Component {
         content: this.state.content,
       }),
     });
+  };
+
+  deleteReply = index => {
+    const { replys } = this.state;
+    const otherReplys = replys.filter((element, idx) => {
+      return idx !== index;
+    });
+    this.setState({ replys: otherReplys });
   };
 
   render() {
@@ -144,20 +159,9 @@ class Main extends React.Component {
                   </div>
 
                   <ul className="replyBox">
-                    <li className="replyColumn">
-                      <div className="replyText">
-                        <span className="replyId">gwanyong</span>
-                        <span className="replyContent">졀귀태애애앵~</span>
-                      </div>
-
-                      <div className="replyIcon">
-                        <FontAwesomeIcon className="heart" icon={faHeart} />
-                        <FontAwesomeIcon className="trash" icon={faTrash} />
-                      </div>
-                    </li>
-                    {replys.map(text => {
+                    {replys.map((text, index) => {
                       return (
-                        <li className="replyColumn">
+                        <li className="replyColumn" key={index}>
                           <div className="replyText">
                             <span className="replyId">musk</span>
                             <span className="replyContent">{text.content}</span>
@@ -165,7 +169,11 @@ class Main extends React.Component {
 
                           <div className="replyIcon">
                             <FontAwesomeIcon className="heart" icon={faHeart} />
-                            <FontAwesomeIcon className="trash" icon={faTrash} />
+                            <FontAwesomeIcon
+                              className="trash"
+                              icon={faTrash}
+                              onClick={() => this.deleteReply(index)}
+                            />
                           </div>
                         </li>
                       );
