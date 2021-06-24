@@ -10,6 +10,7 @@ import MainJongmin from './pages/Jongmin/Main/Main';
 import MainYunkyung from './pages/yunkyung/Main/Main';
 import './styles/reset.scss';
 import './styles/common.scss';
+import './styles/variable.scss';
 
 class Routes extends React.Component {
   render() {
