@@ -37,8 +37,8 @@ class FeedInfo extends React.Component {
                 <span className="posting_comment">한강 이쁘네요</span>
               </div>
               <div className="comment_mod_box">
-                <i className="far fa-heart fa-xs"></i>
-                <i className="far fa-trash-alt fa-xs"></i>
+                <i className="far fa-heart fa-sm"></i>
+                <i className="far fa-trash-alt fa-sm"></i>
               </div>
             </li>
           </ul>
