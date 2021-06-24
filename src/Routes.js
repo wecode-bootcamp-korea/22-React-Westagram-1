@@ -8,8 +8,6 @@ import MainEuiyeon from './pages/euiyeon/Main/Main';
 import MainGwanyong from './pages/gwanyong/Main/Main';
 import MainJongmin from './pages/Jongmin/Main/Main';
 import MainYunkyung from './pages/yunkyung/Main/Main';
-import './styles/reset.scss';
-import './styles/common.scss';
 
 class Routes extends React.Component {
   render() {

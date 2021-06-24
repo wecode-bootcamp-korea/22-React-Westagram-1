@@ -12,7 +12,7 @@ class Nav extends React.Component {
           <img className="instaLogo" src="images/instagram.svg" alt="logo" />
           <div className="separator"></div>
           <Link className="title" to="/">
-            Yongstagram
+            Westagram
           </Link>
         </div>
         <div className="searchbarContainer">
