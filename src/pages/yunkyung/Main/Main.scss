@@ -1,0 +1,372 @@
+$color_1: gray;
+$color_2: #bdbdbd;
+$color_3: #a4a4a4;
+$color_4: lightgray;
+$font_family_1: Lobster, cursive;
+$background_color_1: lightgray;
+$background_color_2: #fafafa;
+$background_color_3: white;
+
+/* 메뉴 */
+/* 메인 */
+/* 댓글 */
+/* 오른쪽 사이드 타이틀 */
+/* 오른쪽 사이드 첫번째 박스 */
+/* 오른쪽 사이드 두번째 박스 */
+/* 오른쪽 사이드 맨 밑 footer */
+body {
+  display: grid;
+  position: relative;
+  background-color: $background_color_1;
+  text-align: center;
+}
+
+.main_bd {
+  display: flex;
+  flex-direction: column;
+  background-color: $background_color_2;
+  margin: auto;
+  border-radius: 3px;
+  align-items: center;
+  nav {
+    display: flex;
+    width: 1500px;
+    border-bottom: 1px solid lightgray;
+    background-color: $background_color_3;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    margin-bottom: 30px;
+    .nav_icons {
+      display: flex;
+      width: 900px;
+      padding: 15px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .left_icons {
+      display: flex;
+      align-items: center;
+      h1 {
+        margin: 8px;
+        color: $color_1;
+        font-size: 30px;
+        font-weight: lighter;
+      }
+      h3 {
+        font-size: 20px;
+        font-family: $font_family_1;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .search {
+      input {
+        width: 200px;
+        height: 30px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        text-align: center;
+      }
+    }
+    .right_icons {
+      img {
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+      }
+    }
+  }
+
+  .mainWrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    .main {
+      display: flex;
+      width: 500px;
+      height: 100%;
+      margin-left: 350px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      background-color: $background_color_3;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+      div.feeds {
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        .feeds_left {
+          display: flex;
+          margin: 5px;
+          align-items: center;
+          img {
+            width: 33px;
+            height: 33px;
+            margin: 10px;
+            border-radius: 16px;
+          }
+          h1 {
+            margin-left: 7px;
+            font-size: 18px;
+          }
+        }
+        .feeds_right {
+          p {
+            margin: 13px;
+            margin-left: 330px;
+            font-size: 30px;
+          }
+        }
+        .feeds_content {
+          margin: 0;
+          img {
+            display: flex;
+            width: 498px;
+          }
+        }
+        .feeds_icons {
+          display: -webkit-inline-box;
+          img {
+            padding-top: 7px;
+            padding-left: 10px;
+          }
+        }
+        .feeds_icons_left {
+          img {
+            width: 35px;
+            height: 33px;
+            margin: 3px;
+          }
+        }
+        .feeds_icons_right {
+          img {
+            width: 35px;
+            height: 33px;
+            margin: 3px;
+            margin-left: 315px;
+          }
+        }
+        .feeds_text {
+          width: 100%;
+          border-bottom: 1px solid lightgray;
+          img {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin-top: 8px;
+            margin-left: 15px;
+            margin-right: 5px;
+            border-radius: 16px;
+          }
+          h1 {
+            margin-top: 5px;
+            margin-left: 40px;
+            font-weight: normal;
+            font-size: 15px;
+          }
+          h2 {
+            margin-top: 10px;
+            margin-left: 15px;
+            font-weight: normal;
+            font-size: 15px;
+          }
+          p {
+            margin-top: 5px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+            color: $color_1;
+            font-weight: normal;
+            font-size: 15px;
+          }
+          span {
+            padding-left: 2px;
+            padding-bottom: 5px;
+            font-size: 14px;
+          }
+          #list {
+            li {
+              display: flex;
+              margin-left: 15px;
+              margin-bottom: 5px;
+              list-style: none;
+            }
+          }
+          .feeds_text_top {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+          }
+        }
+        .reply {
+          display: flex;
+          input {
+            display: flex;
+            width: 400px;
+            height: 45px;
+            margin-left: 20px;
+            border: none;
+            border-radius: 2px;
+          }
+          #reply-btn {
+            width: 70px;
+            color: $color_1;
+            background-color: $background_color_3;
+            border: none;
+          }
+        }
+      }
+    }
+
+    .main-right {
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 300px;
+      margin-top: 50px;
+      margin-left: 25px;
+      .main-right-nav {
+        .main-right-title {
+          display: flex;
+          align-items: center;
+          h1 {
+            margin-left: 15px;
+            p {
+              margin-right: 20px;
+              color: $color_2;
+            }
+          }
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          margin-left: 35px;
+          border-radius: 25px;
+        }
+      }
+      .main_right_top {
+        width: 300px;
+        height: 235px;
+        margin-left: 30px;
+        margin-top: 17px;
+        background-color: $background_color_3;
+        border: 1px solid lightgray;
+        .title {
+          display: flex;
+          margin-top: 13px;
+          justify-content: space-around;
+          flex-direction: row;
+          align-items: center;
+          h1 {
+            margin-right: 130px;
+            color: $color_3;
+            font-size: 15px;
+          }
+          p {
+            font-weight: bolder;
+            font-size: 13px;
+          }
+        }
+        .profile {
+          display: flex;
+          margin-top: 15px;
+          flex-direction: column;
+          justify-content: center;
+          img {
+            width: 48px;
+            height: 48px;
+            margin-left: 22px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+          }
+        }
+        .profile_detail {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .profile_text {
+            display: block;
+            margin-left: 10px;
+            margin-bottom: 12px;
+            h1 {
+              font-size: 15px;
+              flex-direction: column;
+            }
+            p {
+              color: $color_3;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+      .main_right_bottom {
+        width: 300px;
+        height: 235px;
+        margin-left: 30px;
+        margin-top: 17px;
+        border: 1px solid lightgray;
+        background-color: $background_color_3;
+        .title {
+          display: flex;
+          margin-top: 13px;
+          align-items: center;
+          justify-content: space-around;
+          flex-direction: row;
+          h1 {
+            margin-right: 60px;
+            color: $color_3;
+            font-size: 15px;
+          }
+          p {
+            font-weight: bolder;
+            font-size: 13px;
+          }
+        }
+        .profile {
+          display: flex;
+          margin-top: 15px;
+          flex-direction: column;
+          justify-content: center;
+          img {
+            width: 48px;
+            height: 48px;
+            margin-left: 22px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+          }
+        }
+        .profile_detail {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          h1 {
+            display: flex;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            flex-direction: column;
+          }
+          p {
+            display: flex;
+            color: $color_3;
+            font-size: 13px;
+          }
+        }
+      }
+      .detail_text {
+        h1 {
+          margin-top: 30px;
+          color: $color_4;
+          font-size: 15px;
+        }
+        h2 {
+          color: $color_4;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
