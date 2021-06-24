@@ -9,32 +9,42 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import './Main.scss';
-import '../../../styles/common.scss';
 
 class Main extends React.Component {
   constructor() {
     super();
+    this.inputRef = React.createRef();
     this.state = {
-      replys: [],
       content: '',
+      replys: [],
     };
   }
-  handleSubmit = e => {
-    e.preventDefault();
-    const replyArray = [...this.state.replys];
-    replyArray.push({
-      user: 'musk',
-      content: this.state.content,
-    });
+
+  handleKeyEvent = e => {
+    if (e.key === 'Enter') {
+      this.addReply();
+    }
   };
 
   handleChange = e => {
-    this.setState = {
-      content: e.target.value,
-    };
+    this.setState({ content: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.inputRef.current.value = '';
+  };
+
+  addReply = () => {
+    this.setState({
+      replys: this.state.replys.concat({
+        content: this.state.content,
+      }),
+    });
   };
 
   render() {
+    const { replys } = this.state;
     return (
       <>
         <Nav />
@@ -137,7 +147,7 @@ class Main extends React.Component {
                     <li className="replyColumn">
                       <div className="replyText">
                         <span className="replyId">gwanyong</span>
-                        <span className="replyContent">dnfkdfl</span>
+                        <span className="replyContent">졀귀태애애앵~</span>
                       </div>
 
                       <div className="replyIcon">
@@ -145,6 +155,21 @@ class Main extends React.Component {
                         <FontAwesomeIcon className="trash" icon={faTrash} />
                       </div>
                     </li>
+                    {replys.map(text => {
+                      return (
+                        <li className="replyColumn">
+                          <div className="replyText">
+                            <span className="replyId">musk</span>
+                            <span className="replyContent">{text.content}</span>
+                          </div>
+
+                          <div className="replyIcon">
+                            <FontAwesomeIcon className="heart" icon={faHeart} />
+                            <FontAwesomeIcon className="trash" icon={faTrash} />
+                          </div>
+                        </li>
+                      );
+                    })}
                   </ul>
 
                   <p className="countedDay">1일 전</p>
@@ -156,9 +181,11 @@ class Main extends React.Component {
                       <FontAwesomeIcon className="imoges" icon={faSmile} />
                       <input
                         onChange={this.handleChange}
+                        onKeyPress={this.handleKeyEvent}
                         className="replyInput"
                         type="text"
                         placeholder="댓글 달기..."
+                        ref={this.inputRef}
                       />
                       <button className="replyBtn">게시</button>
                     </form>

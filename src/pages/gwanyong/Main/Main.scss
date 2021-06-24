@@ -1,3 +1,5 @@
+@import '../../../styles/variable.scss';
+
 .main {
   #navbar {
     display: flex;
@@ -53,7 +55,7 @@
         width: 220px;
         height: 12px;
         padding: 13px;
-        border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+        border: $default-border;
 
         .searchbar:focus {
           outline: none;
@@ -100,8 +102,7 @@
         margin-bottom: 24px;
         margin-right: 22px;
         padding: 16px 0;
-        border: 1px solid rgb(229, 230, 231);
-
+        border: $default-border;
         .story {
           display: flex;
           flex-direction: column;
@@ -127,14 +128,15 @@
             .storyImg {
               width: 56px;
               height: 56px;
-              padding: 5px;
               margin: 5px;
+              border: 3px solid white;
               border-radius: 50%;
             }
           }
 
           .storyId {
             margin-top: 6px;
+            color: $font-color;
           }
         }
       }
@@ -143,7 +145,7 @@
         width: 614px;
         height: 1068px;
         margin-right: 22px;
-        border: 1px solid rgb(229, 230, 231);
+        border: $default-border;
 
         .feedInfo {
           display: flex;
@@ -174,8 +176,8 @@
 
               .writerImg {
                 width: 37px;
-                padding: 3px;
-                margin: 2px;
+                margin: 2.3px;
+                border: 1px solid white;
                 border-radius: 50%;
               }
             }
@@ -233,7 +235,7 @@
           padding: 0 16px;
           bottom: 0;
           left: 0;
-          border-top: 1px solid rgb(229, 230, 231);
+          border-top: $default-border;
 
           .inputContainer {
             display: flex;
@@ -258,10 +260,10 @@
           }
 
           .replyBtn {
-            width: 24px;
+            width: 44px;
             border: none;
             background-color: transparent;
-            color: rgb(89, 168, 248);
+            color: $btn-color-active;
             font-weight: bold;
             cursor: pointer;
           }
@@ -301,7 +303,8 @@
 
         .accountChangeBtn {
           border: none;
-          color: #6aadf7;
+          color: $btn-color-active;
+          background-color: transparent;
           font-size: 12px;
           font-weight: bold;
           cursor: pointer;
@@ -347,13 +350,14 @@
 
             .relation {
               font-size: 12px;
-              color: #8e8e8e;
+              color: $font-gray;
             }
           }
 
           .followBtn {
             border: none;
-            color: #6aadf7;
+            color: $btn-color-active;
+            background-color: transparent;
             font-size: 12px;
             font-weight: bold;
             cursor: pointer;
