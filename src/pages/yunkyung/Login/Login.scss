@@ -5,14 +5,17 @@ $font_family_1: Lobster, cursive;
 $background_color_1: #f2f2f2;
 $background_color_2: #a9d0f5;
 
-body {
+.login_body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .login_bd {
   width: 400px;
+  height: auto;
   margin: 80px auto;
+  text-align: center;
   border: 1px solid lightgray;
   border-radius: 3px;
   h1 {
@@ -23,10 +26,8 @@ body {
     font-size: 50px;
     text-align: center;
   }
-}
-.loginForm {
   input {
-    width: 300px;
+    width: 250px;
     height: 40px;
     margin: 0 50px 6px;
     padding-left: 8px;
@@ -36,13 +37,14 @@ body {
     color: $color_1;
   }
 }
+
 .btn {
   button {
     color: $color_2;
     width: 300px;
     padding: 10px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     background-color: $background_color_2;
     border: none;
     border-radius: 5px;
@@ -53,8 +55,11 @@ body {
   }
 }
 footer {
-  padding: 20px;
-  margin-top: 70px;
-  font-size: 15px;
-  color: $color_3;
+  p {
+    padding: 20px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: $color_3;
+  }
 }
