@@ -1,0 +1,132 @@
+@import '../../../../styles/variable.scss';
+
+.feed {
+  position: relative;
+  width: 614px;
+  height: 1068px;
+  margin-right: 22px;
+  border: $default-border;
+
+  .feedInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 18px;
+    padding: 12px;
+
+    .profile {
+      display: flex;
+      position: relative;
+      align-items: center;
+
+      .imgBackground {
+        width: 42px;
+        height: 42px;
+        margin-right: 8px;
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #be28eb 90%
+        );
+
+        border-radius: 50%;
+
+        .writerImg {
+          width: 37px;
+          margin: 2.3px;
+          border: 1px solid white;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .feedImg {
+    width: 612px;
+    height: 767px;
+  }
+
+  .replyContainer {
+    max-height: 200px;
+    padding: 0 16px;
+    overflow: auto;
+
+    .feedIconBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon {
+        font-size: 38px;
+        padding: 8px 0px 8px 8px;
+        cursor: pointer;
+      }
+    }
+
+    .userContents {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .writerId {
+        font-weight: bold;
+      }
+    }
+
+    .replyColumn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+
+      .replyId {
+        margin-right: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+  .replyInputBox {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+    bottom: 0;
+    left: 0;
+    border-top: $default-border;
+
+    .inputContainer {
+      display: flex;
+      align-items: center;
+
+      .imoges {
+        padding: 2px;
+        margin-right: 12px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .replyInput {
+        width: 500px;
+        height: 36px;
+        border: transparent;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .replyBtn {
+      width: 44px;
+      border: none;
+      background-color: transparent;
+      color: $btn-color-active;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}

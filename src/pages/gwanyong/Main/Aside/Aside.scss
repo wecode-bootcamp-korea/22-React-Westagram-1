@@ -1,0 +1,97 @@
+@import '../../../../styles/variable.scss';
+
+#sideMenu {
+  width: 293px;
+  height: 1010px;
+
+  .profileBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 293px;
+    height: 56px;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+
+    .myInfo {
+      display: flex;
+      align-items: center;
+
+      .myImg {
+        width: 56px;
+        margin-right: 18px;
+        border-radius: 50%;
+      }
+
+      .myId {
+        font-weight: bold;
+      }
+      .myName {
+        color: #8e8e8e;
+      }
+    }
+
+    .accountChangeBtn {
+      border: none;
+      color: $btn-color-active;
+      background-color: transparent;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .recommendHead {
+    display: flex;
+    justify-content: space-between;
+    width: 293px;
+    height: 11px;
+    margin-bottom: 14px;
+    padding: 4px 16px;
+
+    .viewAll {
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+
+  .recommendList {
+    padding: 8px 0;
+
+    .recommendUser {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+
+      .userInfo {
+        display: flex;
+
+        .userImg {
+          width: 32px;
+          border-radius: 50%;
+          margin-right: 14px;
+        }
+
+        .userId {
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        .relation {
+          font-size: 12px;
+          color: $font-gray;
+        }
+      }
+
+      .followBtn {
+        border: none;
+        color: $btn-color-active;
+        background-color: transparent;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}
