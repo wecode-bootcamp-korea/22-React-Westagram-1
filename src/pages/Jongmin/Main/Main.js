@@ -4,36 +4,9 @@ import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/variable.scss';
 import '../Main/Main.scss';
+import '../Main/comment.scss';
 
 class MainJongmin extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      commentList: [],
-      commentText: '',
-      userID: 'jongmin_8910',
-    };
-  }
-
-  commentState = event => {
-    this.setState(
-      {
-        commentText: event.target.value,
-      },
-      () => console.log('commentText', this.state.commentText)
-    );
-  };
-
-  commentAdd = () => {
-    const commentText = this.state.commentText;
-    this.state.commentList.push(commentText);
-    this.setState({
-      commentList: this.state.commentText,
-      commentText: '',
-    });
-  };
-
   render() {
     return (
       <div>
@@ -177,10 +150,10 @@ class MainJongmin extends React.Component {
                   <div class="showReply2">6</div>
                   <div class="showReply3">개 모두 보기</div>
                 </button>
-                {/* </div>
-              <div class="commentArea"></div>
+              </div>
+              {/* <div class="commentArea"></div>
               <div class="feedTime">10시간 전</div>
-              <div class="commentInput">
+              <div class="commentArea">
                 <button class="emozi">
                   <img
                     class="smile"
@@ -191,8 +164,8 @@ class MainJongmin extends React.Component {
                 <input class="write" type="text" />
                 <button onclick="summitComment()" class="summit">
                   게시
-                </button> */}
-              </div>
+                </button>
+              </div> */}
             </section>
           </div>
           <div class="profileInfo">

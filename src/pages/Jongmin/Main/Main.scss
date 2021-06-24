@@ -554,18 +554,9 @@
 
 .commentArea {
   display: flex;
-  flex-direction: column;
   width: 600px;
   margin-top: 4px;
   margin-left: 16px;
-  overflow-wrap: break-word;
-}
-
-.talking {
-  display: flex;
-  flex-direction: row;
-  font-size: 14px;
-  max-width: 100%;
   overflow-wrap: break-word;
 }
 
