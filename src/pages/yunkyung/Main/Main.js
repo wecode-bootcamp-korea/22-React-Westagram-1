@@ -112,18 +112,24 @@ class Main extends React.Component {
                 <div className="profile">
                   <div className="profile_detail">
                     <img src="./images/yunkyung/cat1.png" />
-                    <h1>zzzyk</h1>
-                    <p>30분 전</p>
+                    <div className="profile_text">
+                      <h1>zzzyk</h1>
+                      <p>30분 전</p>
+                    </div>
                   </div>
                   <div className="profile_detail">
                     <img src="./images/yunkyung/cat1.png" />
-                    <h1>zzzyk</h1>
-                    <p>30분 전</p>
+                    <div className="profile_text">
+                      <h1>zzzyk</h1>
+                      <p>30분 전</p>
+                    </div>
                   </div>
                   <div className="profile_detail">
                     <img src="./images/yunkyung/cat1.png" />
-                    <h1>zzzyk</h1>
-                    <p>30분 전</p>
+                    <div className="profile_text">
+                      <h1>zzzyk</h1>
+                      <p>30분 전</p>
+                    </div>
                   </div>
                 </div>
               </div>
