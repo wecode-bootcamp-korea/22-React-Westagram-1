@@ -1,10 +1,9 @@
 import React from 'react';
 import Nav from '../../../components/Nav/Nav';
-import '../../../styles/common.scss';
+import Comment from './comment';
 import '../../../styles/reset.scss';
 import '../../../styles/variable.scss';
 import '../Main/Main.scss';
-import '../Main/comment.scss';
 
 class MainJongmin extends React.Component {
   render() {
@@ -151,6 +150,7 @@ class MainJongmin extends React.Component {
                   <div class="showReply3">개 모두 보기</div>
                 </button>
               </div>
+              <Comment />
               {/* <div class="commentArea"></div>
               <div class="feedTime">10시간 전</div>
               <div class="commentArea">
