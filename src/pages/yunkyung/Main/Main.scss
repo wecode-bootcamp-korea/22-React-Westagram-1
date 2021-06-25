@@ -201,6 +201,7 @@ $background_color_3: white;
       margin-right: 300px;
       margin-top: 70px;
       margin-left: 20px;
+
       .main-right-nav {
         .main-right-title {
           display: flex;
@@ -222,6 +223,7 @@ $background_color_3: white;
           border-radius: 25px;
         }
       }
+
       .main_right_top {
         width: 300px;
         height: 235px;
@@ -245,6 +247,7 @@ $background_color_3: white;
             font-size: 13px;
           }
         }
+
         .profile {
           display: flex;
           margin-top: 15px;
@@ -258,6 +261,7 @@ $background_color_3: white;
             border-radius: 25px;
           }
         }
+
         .profile_detail {
           display: flex;
           flex-direction: row;
@@ -278,6 +282,7 @@ $background_color_3: white;
           }
         }
       }
+
       .main_right_bottom {
         width: 300px;
         height: 235px;
@@ -334,6 +339,7 @@ $background_color_3: white;
           }
         }
       }
+
       .detail_text {
         text-align: center;
         h1 {

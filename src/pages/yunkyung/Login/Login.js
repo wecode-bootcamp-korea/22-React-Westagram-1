@@ -8,14 +8,15 @@ class Login extends React.Component {
     this.state = {
       userId: '',
       userPw: '',
-      btnControl: 'disabled',
+      // btnControl: 'disabled',
     };
   }
 
   handleChange = e => {
-    const userId = e.target.name;
-    const userPw = e.target.value;
-    this.setState({ [userId]: userPw });
+    this.setState({
+      userId: e.target.value,
+      userPw: e.target.value,
+    });
   };
 
   render() {
