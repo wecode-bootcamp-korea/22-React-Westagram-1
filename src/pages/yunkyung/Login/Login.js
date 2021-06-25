@@ -12,13 +12,14 @@ class Login extends React.Component {
     };
   }
 
-  handleInput = e => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+  handleChange = e => {
+    const userId = e.target.name;
+    const userPw = e.target.value;
+    this.setState({ [userId]: userPw });
   };
 
   render() {
+    console.log(this.state);
     const { userId, userPw } = this.state;
     return (
       <div className="login_body">
@@ -29,15 +30,15 @@ class Login extends React.Component {
             id="userId"
             name="userId"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={this.handleInput}
+            onChange={this.handleChange}
           />
           <br />
           <input
             type="password"
-            id="password"
+            id="userPw"
             name="userPw"
             placeholder="비밀번호"
-            onChange={this.handleInput}
+            onChange={this.handleChange}
           />
           <div className="btn">
             <button
