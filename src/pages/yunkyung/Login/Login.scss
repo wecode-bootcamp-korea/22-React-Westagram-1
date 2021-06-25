@@ -52,6 +52,9 @@ $background_color_2: #a9d0f5;
       cursor: pointer;
       opacity: 0.5;
     }
+    &:enabled {
+      background-color: blue;
+    }
   }
 }
 footer {

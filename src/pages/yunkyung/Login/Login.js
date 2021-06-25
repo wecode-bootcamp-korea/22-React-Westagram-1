@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
-import './Login.scss';
 
 class Login extends React.Component {
   constructor() {
@@ -13,7 +12,14 @@ class Login extends React.Component {
     };
   }
 
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
   render() {
+    const { userId, userPw } = this.state;
     return (
       <div className="login_body">
         <div className="login_bd">
@@ -21,12 +27,27 @@ class Login extends React.Component {
           <input
             type="text"
             id="userId"
+            name="userId"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            onChange={this.handleInput}
           />
           <br />
-          <input type="password" id="password" placeholder="비밀번호" />
+          <input
+            type="password"
+            id="password"
+            name="userPw"
+            placeholder="비밀번호"
+            onChange={this.handleInput}
+          />
           <div className="btn">
-            <button type="button" class="button" id="button">
+            <button
+              type="button"
+              class="button"
+              id="button"
+              disabled={
+                userId.includes('@') && userPw.length > 4 ? false : true
+              }
+            >
               로그인
             </button>
             <footer>
