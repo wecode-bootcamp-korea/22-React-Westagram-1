@@ -1,0 +1,17 @@
+@import '../../../../../../../styles/variable.scss';
+
+.comment_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+  border-top: $default-border;
+
+  .input_comment {
+    height: 30px;
+    width: 560px;
+    border: none;
+    font-size: $font-size;
+  }
+}

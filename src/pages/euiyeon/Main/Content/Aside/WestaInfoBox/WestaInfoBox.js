@@ -1,4 +1,5 @@
 import React from 'react';
+import './WestaInfoBox.scss';
 
 class WestaInfoBox extends React.Component {
   render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './TopFeed.scss';
 
 class TopFeed extends React.Component {
   render() {

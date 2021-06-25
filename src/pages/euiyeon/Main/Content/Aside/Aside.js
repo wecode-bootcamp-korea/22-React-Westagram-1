@@ -1,4 +1,5 @@
 import React from 'react';
+import './Aside.scss';
 
 import ProfileWrap from './ProfileWrap/ProfileWrap';
 import StoryBox from './StoryBox/StoryBox';

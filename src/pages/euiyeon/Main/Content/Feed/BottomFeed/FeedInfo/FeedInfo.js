@@ -1,4 +1,5 @@
 import React from 'react';
+import './FeedInfo.scss';
 
 class FeedInfo extends React.Component {
   render() {

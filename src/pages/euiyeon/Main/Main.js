@@ -1,5 +1,4 @@
 import React from 'react';
-import './Main.scss';
 
 import Content from './Content/Content';
 import Nav from '../../../components/Nav/Nav';

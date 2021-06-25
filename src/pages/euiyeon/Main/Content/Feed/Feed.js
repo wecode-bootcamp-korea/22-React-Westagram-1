@@ -1,4 +1,5 @@
 import React from 'react';
+import './Feed.scss';
 
 import TopFeed from './TopFeed/TopFeed';
 import BottomFeed from './BottomFeed/BottomFeed';

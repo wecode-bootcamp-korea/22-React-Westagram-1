@@ -1,4 +1,5 @@
 import React from 'react';
+import './Content.scss';
 
 import Feed from './Feed/Feed';
 import Aside from './Aside/Aside';

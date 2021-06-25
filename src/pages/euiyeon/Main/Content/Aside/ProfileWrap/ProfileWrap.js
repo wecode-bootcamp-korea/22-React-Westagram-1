@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProfileWrap.scss';
 
 class ProfileWrap extends React.Component {
   render() {
