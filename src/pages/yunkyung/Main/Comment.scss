@@ -1,0 +1,25 @@
+.main_body {
+  .mainWrap {
+    .main {
+      div.feeds {
+        .reply {
+          display: flex;
+          input {
+            display: flex;
+            width: 400px;
+            height: 45px;
+            margin-left: 20px;
+            border: none;
+            border-radius: 2px;
+          }
+          .reply-btn {
+            width: 70px;
+            color: gray;
+            background-color: white;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

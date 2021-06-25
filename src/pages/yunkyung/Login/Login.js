@@ -1,8 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
+import './Login.scss';
 
 class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      userId: '',
+      userPw: '',
+      btnControl: 'disabled',
+    };
+  }
+
   render() {
     return (
       <div className="login_body">
