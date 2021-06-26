@@ -18,7 +18,7 @@ class RecommendBox extends React.Component {
                 src="./images/euiyeon/euiyeon.jpg"
               />
               <div className="user_profile">
-                <span className="profile_id">hihihi</span>
+                <span className="profile_id">hi</span>
                 <p className="nickname">lee님 외 2명</p>
               </div>
             </div>
