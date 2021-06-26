@@ -5,8 +5,33 @@ import '../../../styles/variable.scss';
 import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
-  goToMain = () => {
-    this.props.history.push('/main');
+  constructor() {
+    super();
+    this.state = {
+      id: '',
+      pw: '',
+      isActive: false,
+    };
+  }
+
+  checkValid = () => {
+    this.state.id.length > 0 && this.state.pw.length >= 6
+      ? this.setState({ isActive: true })
+      : this.setState({ isActive: false });
+  };
+
+  handleInputValue = e => {
+    this.setState({ id: e.target.value });
+  };
+
+  handlePwdValue = e => {
+    this.setState({ pw: e.target.value });
+  };
+
+  goToMain = e => {
+    if (this.state.isActive) {
+      this.props.history.push('/MainEuiyeon');
+    }
   };
   render() {
     return (
@@ -24,6 +49,8 @@ class Login extends React.Component {
                   id="idInput"
                   type="text"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
+                  onKeyUp={this.checkValid}
+                  onChange={this.handleInputValue}
                 />
               </div>
               <div className="inputPassword">
@@ -32,14 +59,18 @@ class Login extends React.Component {
                   id="pwInput"
                   type="password"
                   placeholder="비밀번호 (6자리 이상)"
+                  onKeyUp={this.checkValid}
+                  onChange={this.handlePwdValue}
                 />
               </div>
             </div>
 
             <div className="buttonWrap">
               <button
-                className="loginButton"
-                type="submit"
+                className={
+                  this.state.isActive ? 'loginBtn' : 'loginBtn_disabled'
+                }
+                type="button"
                 onClick={this.goToMain}
               >
                 {' '}
