@@ -2,9 +2,35 @@ import React from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './Comment';
-import { Link } from 'react-router-dom';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: '',
+      commentList: [],
+    };
+  }
+
+  writeCommment = e => {
+    this.setState({
+      comment: e.target.value,
+    });
+  };
+
+  addCommment = () => {
+    this.setState({
+      commentList: this.state.commentList.concat([this.state.comment]),
+      comment: '',
+    });
+  };
+
+  enterKey = e => {
+    if (e.key === 'Enter') {
+      this.addCommment();
+    }
+  };
+
   render() {
     return (
       <>
@@ -52,10 +78,30 @@ class Main extends React.Component {
                       <strong>zzz_yk</strong> 보고싶다 고양이
                     </h2>
                     <p>42분 전</p>
-                    <ul id="list"></ul>
+                    <ul id="list">
+                      {this.state.commentList.map((comm, idx) => {
+                        return <li key={idx}>{comm}</li>;
+                      })}
+                    </ul>
                   </div>
                 </div>
-                <Comment />
+                <div className="reply">
+                  <input
+                    type="text"
+                    id="input"
+                    value={this.state.comment}
+                    placeholder="댓글 달기..."
+                    onChange={this.writeCommment}
+                    onKeyPress={this.enterKey}
+                  />
+                  <button
+                    type="button"
+                    class="reply-btn"
+                    onClick={this.addCommment}
+                  >
+                    게시
+                  </button>
+                </div>
               </div>
             </div>
             <div className="main-right">
