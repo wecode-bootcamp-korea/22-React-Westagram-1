@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.scss';
+import '../../../styles/variable.scss';
 
 import { withRouter } from 'react-router-dom';
 
