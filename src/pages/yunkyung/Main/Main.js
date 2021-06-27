@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './Comment';
@@ -32,6 +32,7 @@ class Main extends React.Component {
   };
 
   render() {
+    console.log(this.state.comment);
     return (
       <>
         <Nav />
@@ -78,9 +79,14 @@ class Main extends React.Component {
                       <strong>zzz_yk</strong> 보고싶다 고양이
                     </h2>
                     <p>42분 전</p>
-                    <ul id="list">
-                      {this.state.commentList.map((comm, idx) => {
-                        return <li key={idx}>{comm}</li>;
+                    <ul className="comment_list">
+                      {this.state.commentList.map(comment => {
+                        return (
+                          <li className="comment_box">
+                            <span className="comment_id">zzz_yk</span>
+                            {comment}
+                          </li>
+                        );
                       })}
                     </ul>
                   </div>

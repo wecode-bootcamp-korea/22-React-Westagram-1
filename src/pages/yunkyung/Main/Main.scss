@@ -174,20 +174,23 @@ $background_color_3: white;
             padding-bottom: 5px;
             font-size: 14px;
           }
-          #list {
-            li {
-              display: flex;
-              margin-left: 15px;
-              margin-bottom: 5px;
-              list-style: none;
-            }
+        }
+        .feeds_text_top {
+          display: flex;
+          margin-top: 5px;
+          align-items: flex-start;
+          flex-direction: column;
+          strong {
+            font-weight: bolder;
           }
-          .feeds_text_top {
-            display: flex;
-            margin-top: 5px;
-            align-items: flex-start;
-            flex-direction: column;
-            strong {
+          .comment_list {
+            margin-bottom: 10px;
+            margin-left: 13px;
+            .comment_box {
+              margin-bottom: 5px;
+            }
+            .comment_id {
+              margin-right: 5px;
               font-weight: bolder;
             }
           }
