@@ -175,24 +175,22 @@ $background_color_3: white;
             font-size: 14px;
           }
         }
-        .feeds_text_top {
+        .reply {
           display: flex;
-          margin-top: 5px;
-          align-items: flex-start;
-          flex-direction: column;
-          strong {
-            font-weight: bolder;
+
+          input {
+            display: flex;
+            width: 400px;
+            height: 45px;
+            margin-left: 20px;
+            border: none;
+            border-radius: 2px;
           }
-          .comment_list {
-            margin-bottom: 10px;
-            margin-left: 13px;
-            .comment_box {
-              margin-bottom: 5px;
-            }
-            .comment_id {
-              margin-right: 5px;
-              font-weight: bolder;
-            }
+          .reply-btn {
+            width: 70px;
+            color: gray;
+            background-color: white;
+            border: none;
           }
         }
       }

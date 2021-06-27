@@ -2,22 +2,24 @@
   .mainWrap {
     .main {
       div.feeds {
-        .reply {
+        .feeds_text_top {
           display: flex;
-
-          input {
-            display: flex;
-            width: 400px;
-            height: 45px;
-            margin-left: 20px;
-            border: none;
-            border-radius: 2px;
+          margin-top: 5px;
+          align-items: flex-start;
+          flex-direction: column;
+          strong {
+            font-weight: bolder;
           }
-          .reply-btn {
-            width: 70px;
-            color: gray;
-            background-color: white;
-            border: none;
+          .comment_list {
+            margin-bottom: 10px;
+            margin-left: 13px;
+            .comment_box {
+              margin-bottom: 5px;
+            }
+            .comment_id {
+              margin-right: 5px;
+              font-weight: bolder;
+            }
           }
         }
       }
