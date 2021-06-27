@@ -1,3 +1,5 @@
+@import '../../../../../../styles/variable.scss';
+
 .feed_info {
   display: flex;
   flex-direction: column;
@@ -66,5 +68,39 @@
         width: 30px;
       }
     }
+  }
+}
+
+.comment_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+  border-top: $default-border;
+
+  .input_comment {
+    height: 30px;
+    width: 560px;
+    border: none;
+    font-size: $font-size;
+  }
+
+  .comment_input_btn {
+    height: 30px;
+    width: 50px;
+    border: none;
+    background-color: white;
+    color: $btn-color-active;
+    font-size: $font-size;
+  }
+
+  .comment_input_btn_disabled {
+    height: 30px;
+    width: 50px;
+    border: none;
+    background-color: white;
+    color: $btn-color-disable;
+    font-size: $font-size;
   }
 }
