@@ -4,12 +4,12 @@ class CommentedBox extends React.Component {
   constructor() {
     super();
     this.state = {
-      nickName: '',
       content: '',
     };
   }
   render() {
-    const { nickName, content } = this.props.propcontent;
+    const { nickName, content } = this.props.commentList;
+
     return (
       <li className="comment_list">
         <div className="comment_info_box">

@@ -9,7 +9,7 @@ class BottomFeed extends React.Component {
     this.state = {
       inputValue: '',
       isActive: false,
-      comments: [{ nickName: 'kim', content: 'hihihi' }],
+      comments: [],
     };
   }
 
@@ -24,7 +24,13 @@ class BottomFeed extends React.Component {
   };
 
   handleCommentPost = e => {
-    this.setState({ content: e.target.value });
+    e.preventDefault();
+    if (this.state.inputValue) {
+      let arr = this.state.comments;
+      arr = arr.concat({ nickName: 'lee', content: this.state.inputValue });
+      console.log(arr);
+      this.setState({ inputValue: '', comments: arr });
+    }
   };
 
   render() {
@@ -69,17 +75,18 @@ class BottomFeed extends React.Component {
                 </div>
               </li>
               {this.state.comments.map(arrayItem => (
-                <CommentedBox propcontent={arrayItem} handleCommentPost />
+                <CommentedBox commentList={arrayItem} />
               ))}
             </ul>
           </div>
         </div>
-        <div className="comment_box">
+        <form className="comment_box" onSubmit={this.handleCommentPost}>
           <input
             className="input_comment"
             type="text"
             placeholder="댓글 달기..."
             onKeyUp={this.checkValid}
+            value={this.state.inputValue}
             onChange={this.handleCommentValue}
           />
           <button
@@ -89,11 +96,10 @@ class BottomFeed extends React.Component {
                 : 'comment_input_btn_disabled'
             }
             type="submit"
-            onClick={this.handleCommentPost}
           >
             게시
           </button>
-        </div>
+        </form>
       </>
     );
   }
