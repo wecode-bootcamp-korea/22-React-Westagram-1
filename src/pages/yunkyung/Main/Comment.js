@@ -10,8 +10,8 @@ class Comment extends React.Component {
         <ul className="comment_list">
           {commentList.map((comment, i) => (
             <li key={i} className="comment_box">
-              <span className="comment_id">zzz_yk</span>
-              {comment}
+              <span className="comment_id">{comment.userName}</span>
+              {comment.content}
             </li>
           ))}
         </ul>

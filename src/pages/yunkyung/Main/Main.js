@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './Comment';
+import COMMENTDATA from './CommentData';
 
 class Main extends React.Component {
   constructor() {
@@ -12,15 +13,30 @@ class Main extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      commentList: COMMENTDATA,
+    });
+  }
+
   writeCommment = e => {
     this.setState({
       comment: e.target.value,
     });
   };
 
-  addCommment = () => {
+  addComment = e => {
+    e.preventDefault();
+    const { commentList, comment } = this.state;
     this.setState({
-      commentList: this.state.commentList.concat([this.state.comment]),
+      commentList: [
+        ...commentList,
+        {
+          id: commentList.length + 1,
+          userName: 'wecode',
+          content: comment,
+        },
+      ],
       comment: '',
     });
   };
@@ -32,7 +48,7 @@ class Main extends React.Component {
   };
 
   render() {
-    const { comment, commentList } = this.state;
+    const { commentList, comment } = this.state;
     return (
       <>
         <Nav />
@@ -86,7 +102,7 @@ class Main extends React.Component {
                   <input
                     type="text"
                     id="input"
-                    value={this.state.comment}
+                    value={comment}
                     placeholder="댓글 달기..."
                     onChange={this.writeCommment}
                     onKeyPress={this.enterKey}
