@@ -1,8 +1,7 @@
 import React from 'react';
-import './Feed.scss';
-
 import TopFeed from './TopFeed/TopFeed';
 import BottomFeed from './BottomFeed/BottomFeed';
+import './Feed.scss';
 
 class Feed extends React.Component {
   render() {

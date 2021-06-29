@@ -25,8 +25,8 @@ class CommentedBox extends React.Component {
     return (
       <li className="comment_list">
         <div className="comment_info_box">
-          <span className="posting_id">{nickName}</span>
-          <span className="posting_comment">{content}</span>
+          <span className="commented_id">{nickName}</span>
+          <span className="commented_comment">{content}</span>
         </div>
         <div className="comment_mod_box">
           {/* <button type="button" id="heartBtn"> */}

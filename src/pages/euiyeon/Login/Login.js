@@ -1,8 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './Login.scss';
 import '../../../styles/variable.scss';
-
-import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor() {

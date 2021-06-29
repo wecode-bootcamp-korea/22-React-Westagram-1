@@ -29,7 +29,6 @@ class BottomFeed extends React.Component {
     if (this.state.inputValue) {
       let arr = this.state.comments;
       arr = arr.concat({ nickName: 'lee', content: this.state.inputValue });
-      console.log(arr);
       this.setState({ inputValue: '', comments: arr });
     }
   };
@@ -71,8 +70,8 @@ class BottomFeed extends React.Component {
             <ul className="comment_ul_list" id="cmt_ul">
               <li className="comment_list">
                 <div className="comment_info_box">
-                  <span className="posting_id">lee</span>
-                  <span className="posting_comment">한강 이쁘네요</span>
+                  <span className="commented_id">lee</span>
+                  <span className="commented_comment">한강 이쁘네요</span>
                 </div>
                 <div className="comment_mod_box">
                   <i className="far fa-heart fa-sm"></i>
