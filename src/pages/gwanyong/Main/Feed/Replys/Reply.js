@@ -1,10 +1,8 @@
 import React from 'react';
-
-import './Replys.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as redheart } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import './Replys.scss';
 
 class Reply extends React.Component {
   render() {
