@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './Main.scss';
+import React from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './Comment';
 import COMMENTDATA from './CommentData';
+import './Main.scss';
 
 class Main extends React.Component {
   constructor() {
@@ -20,8 +20,9 @@ class Main extends React.Component {
   }
 
   writeComment = e => {
+    const { value } = e.target;
     this.setState({
-      comment: e.target.value,
+      comment: value,
     });
   };
 
@@ -57,36 +58,46 @@ class Main extends React.Component {
             <div className="main">
               <div className="feeds">
                 <div className="feeds_left">
-                  <img src="./images/yunkyung/cat1.png" />
+                  <img
+                    alt="고양이 프로필 사진"
+                    src="./images/yunkyung/cat1.png"
+                  />
                   <h1>zzz_yk</h1>
                 </div>
                 <div className="feeds_right">
                   <p>…</p>
                 </div>
                 <div className="feeds_content">
-                  <img src="./images/yunkyung/cat.jpg" />
+                  <img alt="고양이 feed 사진" src="./images/yunkyung/cat.jpg" />
                 </div>
                 <div className="feeds_icons">
                   <div className="feeds_icons_left">
-                    <a href="#">
-                      <img src="https://img.icons8.com/windows/32/000000/search.png" />
-                    </a>
-                    <a href="#">
-                      <img src="https://img.icons8.com/windows/32/000000/like.png" />
-                    </a>
-                    <a href="#">
-                      <img src="https://img.icons8.com/dotty/80/000000/filled-sent.png" />
-                    </a>
+                    <img
+                      alt="돋보기 아이콘"
+                      src="https://img.icons8.com/windows/32/000000/search.png"
+                    />
+                    <img
+                      alt="하트 아이콘"
+                      src="https://img.icons8.com/windows/32/000000/like.png"
+                    />
+                    <img
+                      alt="메세지 아이콘"
+                      src="https://img.icons8.com/dotty/80/000000/filled-sent.png"
+                    />
                   </div>
                   <div className="feeds_icons_right">
-                    <a href="#">
-                      <img src="https://img.icons8.com/material-outlined/24/000000/bookmark-ribbon--v2.png" />
-                    </a>
+                    <img
+                      alt="북마크 아이콘"
+                      src="https://img.icons8.com/material-outlined/24/000000/bookmark-ribbon--v2.png"
+                    />
                   </div>
                 </div>
                 <div className="feeds_text">
                   <div className="feeds_text_top">
-                    <img src="./images/yunkyung/cat1.png" />
+                    <img
+                      alt="고양이 feed 프로필 사진"
+                      src="./images/yunkyung/cat1.png"
+                    />
                     <h1>
                       <strong>Wecode</strong>님 외 <strong>36명</strong>이
                       좋아합니다
@@ -121,7 +132,10 @@ class Main extends React.Component {
             <div className="main-right">
               <div className="main-right-nav">
                 <div className="main-right-title">
-                  <img src="./images/yunkyung/wecode.jpg" />
+                  <img
+                    alt="wecode 프로필 사진"
+                    src="./images/yunkyung/wecode.jpg"
+                  />
                   <h1>
                     Wecode_bootcamp<p>WeCode | 위코드</p>
                   </h1>
@@ -134,21 +148,30 @@ class Main extends React.Component {
                 </div>
                 <div className="profile">
                   <div className="profile_detail">
-                    <img src="./images/yunkyung/cat1.png" />
+                    <img
+                      alt="고양이 story 사진"
+                      src="./images/yunkyung/cat1.png"
+                    />
                     <div className="profile_text">
                       <h1>zzzyk</h1>
                       <p>30분 전</p>
                     </div>
                   </div>
                   <div className="profile_detail">
-                    <img src="./images/yunkyung/cat1.png" />
+                    <img
+                      alt="고양이 story 사진"
+                      src="./images/yunkyung/cat1.png"
+                    />
                     <div className="profile_text">
                       <h1>zzzyk</h1>
                       <p>30분 전</p>
                     </div>
                   </div>
                   <div className="profile_detail">
-                    <img src="./images/yunkyung/cat1.png" />
+                    <img
+                      alt="고양이 story 사진"
+                      src="./images/yunkyung/cat1.png"
+                    />
                     <div className="profile_text">
                       <h1>zzzyk</h1>
                       <p>30분 전</p>
@@ -163,21 +186,30 @@ class Main extends React.Component {
                 </div>
                 <div className="profile">
                   <div className="profile_detail">
-                    <img src="./images/yunkyung/cat1.png" />
+                    <img
+                      alt="고양이 추천 카테고리 사진"
+                      src="./images/yunkyung/cat1.png"
+                    />
                     <div className="profile_text">
                       <h1>zzzyk</h1>
                       <p>30분 전</p>
                     </div>
                   </div>
                   <div className="profile_detail">
-                    <img src="./images/yunkyung/cat1.png" />
+                    <img
+                      alt="고양이 추천 카테고리 사진"
+                      src="./images/yunkyung/cat1.png"
+                    />
                     <div className="profile_text">
                       <h1>zzzyk</h1>
                       <p>30분 전</p>
                     </div>
                   </div>
                   <div className="profile_detail">
-                    <img src="./images/yunkyung/cat1.png" />
+                    <img
+                      alt="고양이 추천 카테고리 사진"
+                      src="./images/yunkyung/cat1.png"
+                    />
                     <div className="profile_text">
                       <h1>zzzyk</h1>
                       <p>30분 전</p>

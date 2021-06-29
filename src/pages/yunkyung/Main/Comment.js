@@ -13,7 +13,7 @@ class Comment extends React.Component {
             return (
               <li key={comment.id} className="comment_box">
                 <span className="comment_id">{comment.userName}</span>
-                {comment.content}
+                <span className="comment_content">{comment.content}</span>
               </li>
             );
           })}
