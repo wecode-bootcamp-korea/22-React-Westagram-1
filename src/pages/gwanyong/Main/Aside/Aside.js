@@ -4,6 +4,7 @@ import RecommendUser from './RecommendUser/RecommendUser';
 
 class Aside extends React.Component {
   render() {
+    const { recommands } = this.props;
     return (
       <aside id="sideMenu">
         <section className="profileBox">
@@ -37,10 +38,15 @@ class Aside extends React.Component {
             <p className="viewAll">모두 보기</p>
           </div>
           <div className="recommendList">
-            <RecommendUser />
-            <RecommendUser />
-            <RecommendUser />
-            <RecommendUser />
+            {recommands.map((user, index) => {
+              return (
+                <RecommendUser
+                  key={index}
+                  img={user.img}
+                  userId={user.userId}
+                />
+              );
+            })}
           </div>
         </section>
         <section className="companyInfo"></section>

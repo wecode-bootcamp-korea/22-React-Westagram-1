@@ -5,6 +5,7 @@
   width: 614px;
   height: 1068px;
   margin-right: 22px;
+  margin-bottom: 20px;
   border: $default-border;
 
   .feedInfo {
@@ -35,9 +36,10 @@
         border-radius: 50%;
 
         .writerImg {
-          width: 37px;
-          margin: 2.3px;
-          border: 1px solid white;
+          width: 34px;
+          height: 34px;
+          margin: 4px;
+          border: 2px solid white;
           border-radius: 50%;
         }
       }
@@ -72,18 +74,6 @@
       margin-bottom: 10px;
 
       .writerId {
-        font-weight: bold;
-      }
-    }
-
-    .replyColumn {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3px;
-
-      .replyId {
-        margin-right: 14px;
         font-weight: bold;
       }
     }

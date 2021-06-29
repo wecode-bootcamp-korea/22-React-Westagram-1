@@ -5,15 +5,19 @@ import './Story.scss';
 
 class Story extends React.Component {
   render() {
+    const { storysArray } = this.props;
     return (
       <>
         <section id="storyContainer">
-          <StoryComponent />
-          <StoryComponent />
-          <StoryComponent />
-          <StoryComponent />
-          <StoryComponent />
-          <StoryComponent />
+          {storysArray.map((story, idx) => {
+            return (
+              <StoryComponent
+                key={idx}
+                storyId={story.stroyId}
+                storyImg={story.img}
+              />
+            );
+          })}
         </section>
       </>
     );

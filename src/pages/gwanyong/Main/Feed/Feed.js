@@ -1,4 +1,6 @@
 import React from 'react';
+import Reply from './Replys/Reply';
+
 import './Feed.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,16 +9,26 @@ import { faShare } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { faSmile } from '@fortawesome/free-regular-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 class Feed extends React.Component {
   constructor() {
     super();
     this.inputRef = React.createRef();
     this.state = {
+      //댓글 state
       content: '',
       replys: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/replyData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ replys: data });
+      });
   }
 
   handleKeyEvent = e => {
@@ -41,31 +53,44 @@ class Feed extends React.Component {
     this.inputRef.current.value = '';
   };
 
-  addReply = () => {
+  addReply = e => {
+    const { replys, content } = this.state;
+
     this.setState({
-      replys: this.state.replys.concat({
-        content: this.state.content,
-      }),
+      replys: [
+        ...replys,
+        {
+          id: replys.length + 1,
+          userName: 'yongyong04',
+          content: content,
+          isLiked: false,
+        },
+      ],
     });
+  };
+  clickHeart = id => {
+    const replys = [...this.state.replys];
+
+    replys.filter(ele => {
+      console.log(ele.id);
+      if (ele.id === id) {
+        replys[id - 1].isLiked = !replys[id - 1].isLiked;
+      }
+    });
+    this.setState({ replys: replys });
   };
 
   deleteReply = index => {
     const { replys } = this.state;
     const otherReplys = replys.filter((element, idx) => {
-      return idx !== index;
+      return element.id !== index;
     });
     this.setState({ replys: otherReplys });
   };
 
-  activeHeart = () => {
-    this.setState({ isLike: true });
-    if (this.state.isLike === true) {
-      console.log('빨강');
-    }
-  };
-
   render() {
-    const { replys } = this.state;
+    const { replys, content } = this.state;
+
     return (
       <>
         <section className="feed">
@@ -74,11 +99,11 @@ class Feed extends React.Component {
               <div className="imgBackground">
                 <img
                   className="writerImg"
-                  src="images/gwanyong/profile.jpeg"
+                  src={this.props.writerImg}
                   alt="my-profile"
                 />
               </div>
-              <p className="myId">gwanyong _</p>
+              <p className="myId">{this.props.writer} _</p>
             </div>
 
             <div className="feedOption">
@@ -86,11 +111,7 @@ class Feed extends React.Component {
             </div>
           </div>
           <article className="feedImg">
-            <img
-              className="feedImg"
-              src="images/gwanyong/puppy-1207816_1920.jpg"
-              alt="feedImage"
-            />
+            <img className="feedImg" src={this.props.img} alt="feedImage" />
           </article>
           <section className="replyContainer">
             <div className="feedIconBox">
@@ -104,34 +125,23 @@ class Feed extends React.Component {
               </div>
             </div>
             <div className="userContents">
-              <span className="writerId">gwanyong &nbsp;</span>
-              <p className="feedDes">귀여운 갱얼쥐~👻</p>
+              <span className="writerId">{this.props.writer} &nbsp;</span>
+              <p className="feedDes">{this.props.introText}</p>
             </div>
 
             <ul className="replyBox">
-              {replys.map((text, index) => {
-                return (
-                  <li className="replyColumn" key={index}>
-                    <div className="replyText">
-                      <span className="replyId">musk</span>
-                      <span className="replyContent">{text.content}</span>
-                    </div>
-
-                    <div className="replyIcon">
-                      <FontAwesomeIcon
-                        className="heart"
-                        icon={faHeart}
-                        onClick={this.activeHeart}
-                      />
-                      <FontAwesomeIcon
-                        className="trash"
-                        icon={faTrash}
-                        onClick={() => this.deleteReply(index)}
-                      />
-                    </div>
-                  </li>
-                );
-              })}
+              {replys.map((reply, idx) => (
+                <Reply
+                  key={reply.id}
+                  replyIdx={reply.id}
+                  userName={reply.userName}
+                  text={reply.content}
+                  isLiked={reply.isLiked}
+                  replys={reply}
+                  clickHeart={this.clickHeart}
+                  deleteReply={this.deleteReply}
+                />
+              ))}
             </ul>
 
             <p className="countedDay">1일 전</p>

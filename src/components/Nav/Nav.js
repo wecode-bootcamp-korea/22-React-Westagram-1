@@ -11,7 +11,7 @@ class Nav extends React.Component {
         <div className="logo">
           <img className="instaLogo" src="images/instagram.svg" alt="logo" />
           <div className="separator"></div>
-          <Link className="title" to="/">
+          <Link className="title" to="/LoginGwanyong">
             Westagram
           </Link>
         </div>

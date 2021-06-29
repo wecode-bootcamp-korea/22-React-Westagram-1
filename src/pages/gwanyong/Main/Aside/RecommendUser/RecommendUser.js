@@ -6,13 +6,9 @@ class RecommendUser extends React.Component {
     return (
       <div className="recommendUser">
         <div className="userInfo">
-          <img
-            className="userImg"
-            src="images/gwanyong/musk.jpeg"
-            alt="friend-profile"
-          />
+          <img className="userImg" src={this.props.img} alt="friend-profile" />
           <div className="nameTag">
-            <p className="userId">Elon Mask </p>
+            <p className="userId">{this.props.userId} </p>
             <p className="relation">회원님을 팔로우합니다</p>
           </div>
         </div>

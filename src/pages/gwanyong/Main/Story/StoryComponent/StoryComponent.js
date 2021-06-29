@@ -6,13 +6,9 @@ class StoryComponent extends React.Component {
     return (
       <div className="story">
         <div className="storyBackground">
-          <img
-            className="storyImg"
-            src="images/gwanyong/iu2.jpeg"
-            alt="story"
-          />
+          <img className="storyImg" src={this.props.storyImg} alt="story" />
         </div>
-        <span className="storyId">dlwlrma</span>
+        <span className="storyId">{this.props.storyId}</span>
       </div>
     );
   }

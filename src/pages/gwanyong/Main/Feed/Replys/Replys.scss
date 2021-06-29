@@ -1,0 +1,15 @@
+.replyColumn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+
+  .replyId {
+    margin-right: 14px;
+    font-weight: bold;
+  }
+
+  .heartActive {
+    color: red;
+  }
+}
