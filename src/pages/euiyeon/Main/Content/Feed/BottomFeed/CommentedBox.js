@@ -17,8 +17,12 @@ class CommentedBox extends React.Component {
           <span className="posting_comment">{content}</span>
         </div>
         <div className="comment_mod_box">
-          <i className="far fa-heart fa-sm"></i>
-          <i className="far fa-trash-alt fa-sm"></i>
+          <button type="button" id="heartBtn">
+            <i className="far fa-heart fa-sm"></i>
+          </button>
+          <button type="button" id="deleteBtn">
+            <i className="far fa-trash-alt fa-sm"></i>
+          </button>
         </div>
       </li>
     );

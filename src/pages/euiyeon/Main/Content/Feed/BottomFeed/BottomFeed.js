@@ -33,6 +33,10 @@ class BottomFeed extends React.Component {
     }
   };
 
+  deleteCmt(i) {
+    this.setState(this.state.comments[i]);
+  }
+
   render() {
     return (
       <>
@@ -41,7 +45,7 @@ class BottomFeed extends React.Component {
             <div className="feed_icon_bar_left">
               <i className="far fa-heart fa-lg"></i>
               <i className="far fa-comment fa-lg"></i>
-              <i className="fas fa-external-link-alt fa-lg"></i>
+              <i className="far fa-external-link-alt fa-lg"></i>
             </div>
             <i className="far fa-bookmark fa-lg" id="bookmark"></i>
           </div>
