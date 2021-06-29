@@ -1,3 +1,5 @@
+@import '../../../styles/variable.scss';
+
 $color_1: gray;
 $color_2: #bdbdbd;
 $color_3: #a4a4a4;
@@ -67,9 +69,8 @@ $background_color_3: white;
   }
 
   .mainWrap {
-    display: flex;
+    @include flexCenter;
     background-color: $background_color_2;
-    justify-content: center;
     margin-top: 40px;
     .main {
       display: flex;
