@@ -43,7 +43,8 @@ class Feed extends React.Component {
   };
 
   handleChange = e => {
-    this.setState({ content: e.target.value });
+    const { value } = e.target;
+    this.setState({ content: value });
   };
 
   handleSubmit = e => {
@@ -69,10 +70,9 @@ class Feed extends React.Component {
     });
   };
   clickHeart = id => {
-    const replys = [...this.state.replys];
+    const replys = [...this.state.replys]; //댓글 리스트 복사
 
     replys.filter(ele => {
-      console.log(ele.id);
       if (ele.id === id) {
         replys[id - 1].isLiked = !replys[id - 1].isLiked;
       }
@@ -82,14 +82,14 @@ class Feed extends React.Component {
 
   deleteReply = index => {
     const { replys } = this.state;
-    const otherReplys = replys.filter((element, idx) => {
+    const otherReplys = replys.filter(element => {
       return element.id !== index;
     });
     this.setState({ replys: otherReplys });
   };
 
   render() {
-    const { replys, content } = this.state;
+    const { replys } = this.state;
 
     return (
       <>
@@ -130,7 +130,7 @@ class Feed extends React.Component {
             </div>
 
             <ul className="replyBox">
-              {replys.map((reply, idx) => (
+              {replys.map(reply => (
                 <Reply
                   key={reply.id}
                   replyIdx={reply.id}

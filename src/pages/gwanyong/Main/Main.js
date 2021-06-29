@@ -1,8 +1,8 @@
 import React from 'react';
 import Nav from '../../../components/Nav/Nav';
-import Feed from './Feed/Feed';
 import Story from './Story/Story';
 import Aside from './Aside/Aside';
+import Feed from './Feed/Feed';
 
 import './Main.scss';
 

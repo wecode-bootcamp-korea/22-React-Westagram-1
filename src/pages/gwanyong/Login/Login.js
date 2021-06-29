@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import '../../../styles/common.scss';
 import './Login.scss';
+import '../../../styles/common.scss';
 
 class Login extends React.Component {
   constructor(props) {
@@ -53,7 +53,6 @@ class Login extends React.Component {
   };
 
   render() {
-    console.log(this.props.onSubmit);
     return (
       <div className="Login">
         <div className="container">

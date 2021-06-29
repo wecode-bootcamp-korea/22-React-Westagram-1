@@ -8,8 +8,9 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 class Reply extends React.Component {
   render() {
+    const { replyIdx } = this.props;
     return (
-      <li className="replyColumn" key={this.props.replyIdx}>
+      <li className="replyColumn" key={replyIdx}>
         <div className="replyText">
           <span className="replyId">{this.props.userName}</span>
           <span className="replyContent">{this.props.text}</span>
@@ -19,13 +20,13 @@ class Reply extends React.Component {
           <FontAwesomeIcon
             className={this.props.isLiked ? 'heartActive' : 'heart'}
             icon={redheart}
-            onClick={() => this.props.clickHeart(this.props.replyIdx)}
+            onClick={() => this.props.clickHeart(replyIdx)}
           />
 
           <FontAwesomeIcon
             className="trash"
             icon={faTrash}
-            onClick={() => this.props.deleteReply(this.props.replyIdx)}
+            onClick={() => this.props.deleteReply(replyIdx)}
           />
         </div>
       </li>
