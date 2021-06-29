@@ -1,4 +1,4 @@
-const COMMENT = [
+const COMMENTDATA = [
   {
     id: 1,
     userName: 'wecode',
@@ -16,4 +16,4 @@ const COMMENT = [
   },
 ];
 
-export default COMMENT;
+export default COMMENTDATA;

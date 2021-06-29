@@ -19,7 +19,7 @@ class Main extends React.Component {
     });
   }
 
-  writeCommment = e => {
+  writeComment = e => {
     this.setState({
       comment: e.target.value,
     });
@@ -33,7 +33,7 @@ class Main extends React.Component {
         ...commentList,
         {
           id: commentList.length + 1,
-          userName: 'wecode',
+          userName: 'zzz_yk',
           content: comment,
         },
       ],
@@ -41,11 +41,11 @@ class Main extends React.Component {
     });
   };
 
-  enterKey = e => {
-    if (e.key === 'Enter') {
-      this.addCommment();
-    }
-  };
+  // enterKey = e => {
+  //   if (e.key === 'Enter') {
+  //     this.addComment();
+  //   }
+  // };
 
   render() {
     const { commentList, comment } = this.state;
@@ -99,18 +99,19 @@ class Main extends React.Component {
                   </div>
                 </div>
                 <div className="reply">
-                  <input
-                    type="text"
-                    id="input"
-                    value={comment}
-                    placeholder="댓글 달기..."
-                    onChange={this.writeCommment}
-                    onKeyPress={this.enterKey}
-                  />
+                  <form onSubmit={this.addComment}>
+                    <input
+                      type="text"
+                      id="input"
+                      value={comment}
+                      placeholder="댓글 달기..."
+                      onChange={this.writeComment}
+                    />
+                  </form>
                   <button
                     type="button"
-                    class="reply-btn"
-                    onClick={this.addCommment}
+                    className="reply-btn"
+                    onClick={this.addComment}
                   >
                     게시
                   </button>
