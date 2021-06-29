@@ -153,7 +153,6 @@ input:focus {
 
 .userinfoID {
   width: 250px;
-  height: 20px;
   background: rgba(var(--b3f, 250, 250, 250), 1);
   font-size: 14px;
   border: 0px;
@@ -162,7 +161,6 @@ input:focus {
 
 .userinfoPW {
   width: 250px;
-  height: 20px;
   background: rgba(var(--b3f, 250, 250, 250), 1);
   font-size: 14px;
   border: 0px;
@@ -179,15 +177,17 @@ input:focus {
   padding: 5px 9px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 149, 246, 0.3);
   opacity: 1;
   border: 1px solid transparent;
-  color: white;
   cursor: pointer;
   box-sizing: border-box;
-  font-weight: 600;
   text-align: center;
   border-radius: 4px;
+}
+
+.btnText {
+  color: white;
+  font-weight: 600;
   font-size: 14px;
 }
 

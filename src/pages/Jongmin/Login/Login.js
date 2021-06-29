@@ -47,7 +47,7 @@ class Login extends React.Component {
                 <div class="logoContain">
                   <img
                     class="logo1"
-                    src="/images/Westagram.png"
+                    src="/images/Jongmin/Westagram.png"
                     alt="logo"
                   ></img>
                 </div>
@@ -82,7 +82,7 @@ class Login extends React.Component {
                         type="button"
                         onClick={this.goToMain}
                       >
-                        로그인
+                        <span className="btnText">로그인</span>
                       </button>
                     </div>
                     <div class="OrArea">
