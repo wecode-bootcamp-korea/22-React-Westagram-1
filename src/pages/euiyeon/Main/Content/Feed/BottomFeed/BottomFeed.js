@@ -20,7 +20,8 @@ class BottomFeed extends React.Component {
   };
 
   handleCommentValue = e => {
-    this.setState({ inputValue: e.target.value });
+    const { value } = e.target;
+    this.setState({ inputValue: value });
   };
 
   handleCommentPost = e => {
