@@ -11,22 +11,7 @@ class Main extends React.Component {
     super();
     this.inputRef = React.createRef();
     this.state = {
-      feeds: [
-        {
-          id: 23,
-          imgs: 'images/gwanyong/puppy-1207816_1920.jpg',
-          writer: 'gwanyong ',
-          writerImg: 'images/gwanyong/profile.jpeg',
-          introText: '귀여운 갱얼쥐~👻',
-        },
-        {
-          id: 24,
-          imgs: 'images/gwanyong/inu.jpg',
-          writer: 'musk203 ',
-          writerImg: 'images/gwanyong/musk.jpeg',
-          introText: '화성 갈끄이까앙아~🏆',
-        },
-      ],
+      feeds: [],
       storys: [
         {
           id: 101,
@@ -79,9 +64,22 @@ class Main extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3000/data/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ feeds: data });
+      });
+  }
+
+  changeState = e => {
+    this.setState({ feeds: e });
+  };
+
   render() {
     const { feeds, storys, recommands } = this.state;
-
     return (
       <>
         <Nav />
@@ -89,14 +87,17 @@ class Main extends React.Component {
           <main id="main">
             <div className="mainContainer">
               <Story storysArray={storys} />
-              {feeds.map(feed => (
+              {feeds.map((feed, index) => (
                 <Feed
                   key={feed.id}
                   id={feed.id}
                   img={feed.imgs}
                   writer={feed.writer}
                   writerImg={feed.writerImg}
+                  feedIdx={index}
                   introText={feed.introText}
+                  feeds={feeds}
+                  changeState={this.changeState}
                 />
               ))}
             </div>

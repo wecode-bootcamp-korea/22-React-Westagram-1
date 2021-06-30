@@ -7,6 +7,8 @@ import './Replys.scss';
 class Reply extends React.Component {
   render() {
     const { replyIdx } = this.props;
+    console.log(replyIdx, 'reple');
+
     return (
       <li className="replyColumn" key={replyIdx}>
         <div className="replyText">

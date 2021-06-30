@@ -15,18 +15,8 @@ class Feed extends React.Component {
     this.state = {
       //댓글 state
       content: '',
-      replys: [],
+      // replys: [],
     };
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:3000/data/replyData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ replys: data });
-      });
   }
 
   handleKeyEvent = e => {
@@ -54,18 +44,17 @@ class Feed extends React.Component {
 
   addReply = e => {
     const { replys, content } = this.state;
+    let newFeed = this.props.feeds;
 
-    this.setState({
-      replys: [
-        ...replys,
-        {
-          id: replys.length + 1,
-          userName: 'yongyong04',
-          content: content,
-          isLiked: false,
-        },
-      ],
-    });
+    newFeed[this.props.feedIdx].replis = [
+      ...newFeed[this.props.feedIdx].replis,
+      {
+        id: newFeed[this.props.feedIdx].replis.length + 1,
+        userName: 'yongyong04',
+        content: content,
+        isLiked: false,
+      },
+    ];
   };
   clickHeart = id => {
     const replys = [...this.state.replys]; //댓글 리스트 복사
@@ -79,16 +68,21 @@ class Feed extends React.Component {
   };
 
   deleteReply = index => {
-    const { replys } = this.state;
-    const otherReplys = replys.filter(element => {
-      return element.id !== index;
-    });
-    this.setState({ replys: otherReplys });
+    let newFeed = this.props.feeds[this.props.feedIdx].replis;
+    console.log(newFeed);
+
+    // console.log(replys);
+    // console.log(this.props.feeds[this.props.feedIdx].replis[index - 1].id);
+    // console.log(index, 'index');
+    newFeed = [
+      newFeed.filter(element => {
+        return element.id !== index;
+      }),
+    ];
+    this.props.changeState(newFeed);
   };
 
   render() {
-    const { replys } = this.state;
-
     return (
       <>
         <section className="feed">
@@ -128,16 +122,16 @@ class Feed extends React.Component {
             </div>
 
             <ul className="replyBox">
-              {replys.map(reply => (
+              {this.props.feeds[this.props.feedIdx].replis.map(reply => (
                 <Reply
-                  key={reply.id}
+                  key={Math.random()}
                   replyIdx={reply.id}
                   userName={reply.userName}
                   text={reply.content}
                   isLiked={reply.isLiked}
-                  replys={reply}
                   clickHeart={this.clickHeart}
                   deleteReply={this.deleteReply}
+                  feeds={this.feeds}
                 />
               ))}
             </ul>

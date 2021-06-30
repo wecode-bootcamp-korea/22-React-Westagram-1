@@ -1,0 +1,38 @@
+[
+  {
+    "id": 23,
+    "imgs": "images/gwanyong/puppy-1207816_1920.jpg",
+    "writer": "gwanyong ",
+    "writerImg": "images/gwanyong/profile.jpeg",
+    "introText": "귀여운 갱얼쥐~👻",
+    "replis": [
+      {
+        "id": 1,
+        "userName": "iu _",
+        "content": "졀귀태애애애앵 👻",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "musk203",
+        "content": "누구집 갠가요?? 🍖",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "소통해요!! 🍙",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "id": 24,
+    "imgs": "images/gwanyong/inu.jpg",
+    "writer": "musk203 ",
+    "writerImg": "images/gwanyong/musk.jpeg",
+    "introText": "화성 갈끄이까앙아~🏆",
+    "replis": []
+  }
+]
