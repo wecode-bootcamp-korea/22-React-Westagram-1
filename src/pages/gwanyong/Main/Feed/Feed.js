@@ -1,12 +1,14 @@
 import React from 'react';
 import Reply from './Replys/Reply';
+
+import './Feed.scss';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { faSmile } from '@fortawesome/free-regular-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import './Feed.scss';
 
 class Feed extends React.Component {
   constructor() {

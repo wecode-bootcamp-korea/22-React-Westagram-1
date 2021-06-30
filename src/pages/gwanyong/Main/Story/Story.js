@@ -1,5 +1,6 @@
 import React from 'react';
 import StoryComponent from './StoryComponent/StoryComponent';
+
 import './Story.scss';
 
 class Story extends React.Component {
