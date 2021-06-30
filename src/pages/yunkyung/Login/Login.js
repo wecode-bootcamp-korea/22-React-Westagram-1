@@ -21,7 +21,7 @@ class Login extends React.Component {
 
   // 로그인 & 화원가입 성공 여부
   signUpFetch = () => {
-    fetch('http://10.58.5.217:8000/users/signup', {
+    fetch('http://10.58.5.217:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         nick_name: 'wecode',
@@ -36,9 +36,10 @@ class Login extends React.Component {
       .then(response => response.json())
       .then(result => {
         if (result.token !== undefined) {
-          alert('회원가입 성공');
+          alert('로그인 성공');
+          localStorage.setItem('access_token :', result.token);
         } else {
-          alert('회원가입 실패');
+          alert('로그인 실패');
         }
         console.log('결과: ', result);
       });

@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './Comment';
-import COMMENTDATA from './CommentData';
+// import COMMENTDATA from './CommentData';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -13,11 +13,11 @@ class Main extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      commentList: COMMENTDATA,
-    });
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     commentList: COMMENTDATA,
+  //   });
+  // }
 
   writeComment = e => {
     const { value } = e.target;
@@ -25,6 +25,18 @@ class Main extends React.Component {
       comment: value,
     });
   };
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  }
 
   addComment = e => {
     e.preventDefault();
