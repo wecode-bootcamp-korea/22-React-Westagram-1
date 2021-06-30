@@ -24,12 +24,12 @@ class Login extends React.Component {
     fetch('http://10.58.5.217:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
-        nick_name: 'wecode',
-        name: '이신재',
+        nick_name: 'zzzyk',
+        name: '이윤경',
         email: this.state.userId,
         password: this.state.userPw,
-        phone_number: '01000000001',
-        gender: 'male',
+        phone_number: '01000000000',
+        gender: 'female',
         birth_date: '1999-12-12',
       }),
     })
