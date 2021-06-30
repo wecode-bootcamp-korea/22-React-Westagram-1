@@ -1,6 +1,6 @@
 import React from 'react';
-import './Aside.scss';
 import RecommendUser from './RecommendUser/RecommendUser';
+import './Aside.scss';
 
 class Aside extends React.Component {
   render() {
@@ -26,15 +26,7 @@ class Aside extends React.Component {
 
         <section className="recommendContainer">
           <div className="recommendHead">
-            <p
-              style={{
-                fontSize: '14px',
-                color: '#8e8e8e',
-                fontWeight: 'bold',
-              }}
-            >
-              회원님을 위한 추천
-            </p>
+            <p className="recommendTxt">회원님을 위한 추천</p>
             <p className="viewAll">모두 보기</p>
           </div>
           <div className="recommendList">
