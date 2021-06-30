@@ -8,17 +8,26 @@ class Comment extends React.Component {
     this.state = {
       commentList: [],
       commentValue: '',
+      blackHeart: '/images/Jongmin/instagramBlackHeart.png',
+      redHeart: '/images/Jongmin/instagramRedHeart.png',
     };
   }
 
-  handleCommentValue = e => {
-    this.setState({
-      commentValue: e.target.value,
-    });
-  };
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  }
 
-  deleteComment = e => {
-    this.setState({ commentList: e.target.id });
+  handleCommentValue = e => {
+    const { value } = e.target;
+    this.setState({ commentValue: value });
   };
 
   addComment = e => {
@@ -38,6 +47,26 @@ class Comment extends React.Component {
     });
   };
 
+  deleteReply = index => {
+    console.log('클릭');
+    const { commentList } = this.state;
+    const otherReplys = commentList.filter(element => {
+      return element.id !== index;
+    });
+    this.setState({ commentList: otherReplys });
+  };
+
+  changeLike = id => {
+    const commentList = [...this.state.commentList];
+
+    commentList.filter(ele => {
+      if (ele.id === id) {
+        commentList[id - 1].isLiked = !commentList[id - 1].isLiked;
+      }
+    });
+    this.setState({ commentList: commentList });
+  };
+
   render() {
     const { commentList, commentValue } = this.state;
     return (
@@ -47,16 +76,26 @@ class Comment extends React.Component {
             return (
               <CommentList
                 key={comment.id}
+                commentId={comment.id}
                 UserId={comment.userName}
                 comment={comment.content}
+                isLiked={comment.isLiked}
+                deleteComment={this.deleteReply}
+                changelike={this.changeLike}
+                blackHeart={this.state.blackHeart}
+                redHeart={this.state.redHeart}
               />
             );
           })}
         </ul>
         <div className="feedTime">10시간 전</div>
         <div className="commentInput">
-          <button class="emozi">
-            <img class="smile" src="/images/Jongmin/emozi.png" alt="emoticon" />
+          <button className="emozi">
+            <img
+              className="smile"
+              src="/images/Jongmin/emozi.png"
+              alt="emoticon"
+            />
           </button>
           <input
             className="write"
@@ -66,7 +105,6 @@ class Comment extends React.Component {
             value={commentValue}
           />
           <button
-            c
             className={`summit ${
               this.state.commentValue.length >= 1 ? 'on' : 'off'
             }`}

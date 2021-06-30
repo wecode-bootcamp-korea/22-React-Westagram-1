@@ -1,5 +1,5 @@
 import React from 'react';
-import Recommand from './recommand';
+import Recommend from './recommend';
 import Link from './link';
 import './profile.scss';
 
@@ -8,6 +8,14 @@ class Profile extends React.Component {
     super();
     this.state = {
       recommand: [
+        {
+          id: 'User_1',
+          img: '/images/Jongmin/person1.JPG',
+        },
+        {
+          id: 'User_1',
+          img: '/images/Jongmin/person1.JPG',
+        },
         {
           id: 'User_1',
           img: '/images/Jongmin/person1.JPG',
@@ -38,7 +46,7 @@ class Profile extends React.Component {
         </div>
         <div className="people">
           {recommand.map(recommands => {
-            return <Recommand id={recommands.id} img={recommands.img} />;
+            return <Recommend id={recommands.id} img={recommands.img} />;
           })}
           <Link />
         </div>

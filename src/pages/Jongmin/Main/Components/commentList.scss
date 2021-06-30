@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   font-size: 14px;
-  max-width: 100%;
+  max-width: 614px;
   overflow-wrap: break-word;
 }
 
@@ -37,8 +37,31 @@
   border: 0;
   width: 40px;
   height: 25px;
+  margin-right: 10px;
   background-repeat: no-repeat;
   background-size: 100%;
-  margin-left: 8px;
+  cursor: pointer;
+}
+
+.likeBtn {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  width: 40px;
+  height: 25px;
+  margin-left: -25px;
+  margin-top: -3px;
+  background-repeat: no-repeat;
+  background-size: 100%;
   cursor: pointe;
+}
+
+.heart {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
 }

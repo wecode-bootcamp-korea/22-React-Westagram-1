@@ -25,22 +25,19 @@ class Feed extends React.Component {
           <button className="threeDots"></button>
         </div>
         <div className="feedContents">
-          <img class="feedContentsPhoto" src={this.props.img} alt="feedphoto" />
+          <img
+            className="feedContentsPhoto"
+            src={this.props.img}
+            alt="feedphoto"
+          />
         </div>
         <div className="likeContain">
           <div className="likeHeart">
             <button className="likeButton">
               <img
-                onclick="changeHeart()"
-                className="blackHeart"
+                className="Heart"
                 src="/images/Jongmin/instagramBlackHeart.png"
                 alt="Heart"
-              />
-              <img
-                onclick="returnHeart()"
-                className="redHeart"
-                src="/images/Jongmin/instagramRedHeart.png"
-                alt="LikeHeart"
               />
             </button>
           </div>

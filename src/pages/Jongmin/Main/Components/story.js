@@ -11,6 +11,14 @@ class Story extends React.Component {
           id: 'story_User',
           img: '/images/Jongmin/friendstory.JPG',
         },
+        {
+          id: 'story_User',
+          img: '/images/Jongmin/friendstory.JPG',
+        },
+        {
+          id: 'story_User',
+          img: '/images/Jongmin/friendstory.JPG',
+        },
       ],
     };
   }
