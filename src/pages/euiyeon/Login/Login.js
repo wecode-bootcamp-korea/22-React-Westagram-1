@@ -14,7 +14,7 @@ class Login extends React.Component {
   }
 
   checkValid = () => {
-    this.state.id.length > 0 && this.state.pw.length >= 6
+    this.state.id.includes('@') && this.state.pw.length >= 6
       ? this.setState({ isActive: true })
       : this.setState({ isActive: false });
   };
@@ -28,9 +28,24 @@ class Login extends React.Component {
   };
 
   goToMain = e => {
-    if (this.state.isActive) {
-      this.props.history.push('/MainEuiyeon');
-    }
+    fetch('http://10.58.0.100:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+        nick_name: '이의연',
+        phonenumber: '01012345678',
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log('결과 : ', result);
+        if (result.message === 'SUCCESS') {
+          this.props.history.push('/MainEuiyeon');
+        } else {
+          alert('아이디 및 비밀번호를 확인하세요!');
+        }
+      });
   };
 
   render() {
