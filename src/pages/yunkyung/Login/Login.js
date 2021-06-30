@@ -19,8 +19,32 @@ class Login extends React.Component {
     });
   };
 
+  // 로그인 & 화원가입 성공 여부
+  signUpFetch = () => {
+    fetch('http://10.58.5.217:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        nick_name: 'wecode',
+        name: '이신재',
+        email: this.state.userId,
+        password: this.state.userPw,
+        phone_number: '01000000001',
+        gender: 'male',
+        birth_date: '1999-12-12',
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.token !== undefined) {
+          alert('회원가입 성공');
+        } else {
+          alert('회원가입 실패');
+        }
+        console.log('결과: ', result);
+      });
+  };
+
   render() {
-    console.log(this.state);
     const { userId, userPw } = this.state;
     return (
       <div className="login_body">
@@ -44,8 +68,9 @@ class Login extends React.Component {
           <div className="btn">
             <button
               type="button"
-              class="button"
+              className="button"
               id="button"
+              onClick={this.signUpFetch}
               disabled={
                 userId.includes('@') && userPw.length > 4 ? false : true
               }
