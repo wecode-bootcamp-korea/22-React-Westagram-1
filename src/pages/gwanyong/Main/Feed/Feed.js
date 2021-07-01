@@ -43,7 +43,7 @@ class Feed extends React.Component {
   };
 
   addReply = e => {
-    const { replys, content } = this.state;
+    const { content } = this.state;
     let newFeed = this.props.feeds;
 
     newFeed[this.props.feedIdx].replis = [
@@ -55,30 +55,30 @@ class Feed extends React.Component {
         isLiked: false,
       },
     ];
+    this.props.changeState(newFeed);
   };
   clickHeart = id => {
-    const replys = [...this.state.replys]; //댓글 리스트 복사
-
-    replys.filter(ele => {
-      if (ele.id === id) {
-        replys[id - 1].isLiked = !replys[id - 1].isLiked;
+    let newFeed = this.props.feeds;
+    newFeed[this.props.feedIdx].replis = newFeed[this.props.feedIdx].replis.map(
+      reply => {
+        if (reply.id === id) {
+          reply.isLiked = !reply.isLiked;
+        }
+        return reply;
       }
-    });
-    this.setState({ replys: replys });
+    );
+
+    this.props.changeState(newFeed);
   };
 
   deleteReply = index => {
-    let newFeed = this.props.feeds[this.props.feedIdx].replis;
-    console.log(newFeed);
+    let newFeed = this.props.feeds;
 
-    // console.log(replys);
-    // console.log(this.props.feeds[this.props.feedIdx].replis[index - 1].id);
-    // console.log(index, 'index');
-    newFeed = [
-      newFeed.filter(element => {
-        return element.id !== index;
-      }),
-    ];
+    newFeed[this.props.feedIdx].replis = newFeed[
+      this.props.feedIdx
+    ].replis.filter(element => {
+      return element.id !== index;
+    });
     this.props.changeState(newFeed);
   };
 

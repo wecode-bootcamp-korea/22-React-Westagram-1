@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import Posting from './Posting/Posting';
 import './Login.scss';
 import '../../../styles/common.scss';
 
@@ -10,21 +11,38 @@ class Login extends React.Component {
       id: '',
       pw: '',
       btnColor: 'rgb(192, 223, 253)',
+      posting: [],
     };
   }
 
+  componentDidMount() {
+    fetch('http://10.58.6.223:8000/postings', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ posting: data.results });
+      });
+  }
+
   handleSubmit = e => {
+    fetch('http://10.58.6.223:8000/postings', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.access_token) {
+          this.goToMain();
+        } else {
+          alert('id pw 확인');
+        }
+      });
     e.preventDefault();
-    this.setState({
-      id: '',
-      pw: '',
-    });
   };
 
   goToMain = () => {
     let id = this.state.id;
     let pw = this.state.pw;
-
     this.isEmail(id) && this.isPassword(pw)
       ? this.props.history.push('/MainGwanyong')
       : alert('id 또는 비밀번호를 확인해주세요!');
@@ -85,7 +103,7 @@ class Login extends React.Component {
 
                 <button
                   className="loginBtn"
-                  onClick={this.goToMain}
+                  // onClick={this.goToMain}
                   style={{
                     backgroundColor: this.state.btnColor,
                   }}
@@ -126,8 +144,17 @@ class Login extends React.Component {
                 alt="goolgeDownload"
               />
             </section>
+            {/* {this.state.posting.map((element, idx) => (
+              <Posting
+                key={idx}
+                img={element.image_url}
+                nickname={element.nickname}
+                date={element.created_at}
+              />
+            ))} */}
           </section>
         </div>
+
         <footer className="info">
           <p className="info-text">
             소개 &nbsp;&nbsp;&nbsp; 블로그&nbsp;&nbsp;&nbsp;
