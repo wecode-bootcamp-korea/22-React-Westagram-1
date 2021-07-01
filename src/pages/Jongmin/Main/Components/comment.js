@@ -3,31 +3,12 @@ import CommentList from './commentList';
 import './comment.scss';
 
 class Comment extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      commentList: [],
-      commentValue: '',
-      blackHeart: '/images/Jongmin/instagramBlackHeart.png',
-      redHeart: '/images/Jongmin/instagramRedHeart.png',
-    };
-  }
+  componentDidMount = () => {
+    this.props.componentDidMount();
+  };
 
-  componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          commentList: data,
-        });
-      });
-  }
-
-  handleCommentValue = e => {
-    const { value } = e.target;
-    this.setState({ commentValue: value });
+  handleCommentValue = () => {
+    this.props.handleCommentValue(this.props.commentValue);
   };
 
   addComment = e => {

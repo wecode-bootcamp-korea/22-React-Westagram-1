@@ -28,6 +28,34 @@ class Login extends React.Component {
     this.props.history.push('/main');
   };
 
+  Login = () => {
+    fetch('http://10.58.4.40:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+        phone_number: '010-1111-2222',
+        full_name: '이종민',
+        nick_name: 'ljm89',
+      }),
+    })
+      .then(res => {
+        if (res.status === 401) {
+          alert('다시 입력해주세요!');
+        } else {
+          return res.json();
+        }
+      })
+      .then(res => {
+        console.log(res);
+        if (!res) {
+          console.log('none');
+        } else if (res.MESSAGE.SUCCESS) {
+          this.props.history.push('/MainJongmin');
+        }
+      });
+  };
+
   render() {
     return (
       <div class="WholePage">
@@ -80,7 +108,7 @@ class Login extends React.Component {
                             : 'off'
                         }`}
                         type="button"
-                        onClick={this.goToMain}
+                        onClick={this.Login}
                       >
                         <span className="btnText">로그인</span>
                       </button>

@@ -3,6 +3,70 @@ import Comment from './comment';
 import '../Components/feed.scss';
 
 class Feed extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      commentList: [],
+      commentValue: '',
+      blackHeart: '/images/Jongmin/instagramBlackHeart.png',
+      redHeart: '/images/Jongmin/instagramRedHeart.png',
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  }
+
+  handleCommentValue = e => {
+    const { value } = e.target;
+    this.setState({ commentValue: value });
+  };
+
+  addComment = e => {
+    e.preventDefault();
+    const { commentList, commentValue } = this.state;
+    this.setState({
+      commentList: [
+        ...commentList,
+        {
+          id: commentList.length + 1,
+          userName: 'jongmin_8910',
+          content: commentValue,
+          isLiked: false,
+        },
+      ],
+      commentValue: '',
+    });
+  };
+
+  deleteReply = index => {
+    console.log('클릭');
+    const { commentList } = this.state;
+    const otherReplys = commentList.filter(element => {
+      return element.id !== index;
+    });
+    this.setState({ commentList: otherReplys });
+  };
+
+  changeLike = id => {
+    const commentList = [...this.state.commentList];
+
+    commentList.filter(ele => {
+      if (ele.id === id) {
+        commentList[id - 1].isLiked = !commentList[id - 1].isLiked;
+      }
+    });
+    this.setState({ commentList: commentList });
+  };
+
   render() {
     return (
       <section className="feeds">
@@ -86,7 +150,14 @@ class Feed extends React.Component {
             <div className="showReply3">개 모두 보기</div>
           </button>
         </div>
-        <Comment />
+        <Comment
+          commentList={this.state.commentList}
+          commentValue={this.state.commentValue}
+          blackHeart={this.state.blackHeart}
+          redHeart={this.state.redHeart}
+          componentDidMount={this.componentDidMount}
+          handleCommentValue={this.handleCommentValue}
+        />
       </section>
     );
   }

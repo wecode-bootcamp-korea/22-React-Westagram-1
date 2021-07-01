@@ -19,15 +19,20 @@ class MainJongmin extends React.Component {
           likeId: 'jongmin_8910',
           img: '/images/Jongmin/feed contents.JPG',
         },
-        {
-          id: 'kevinlee1207',
-          location: 'Mankato',
-          mention: 'Home',
-          likeId: 'jongmin_8910',
-          img: '/images/Jongmin/feed contents.JPG',
-        },
       ],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feed: data,
+        });
+      });
   }
 
   render() {
