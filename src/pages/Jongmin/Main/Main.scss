@@ -1,3 +1,75 @@
-*{
-    margin: 0;  
+@import '../../../styles/variable.scss';
+
+.mainpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #fafafa;
+  margin: 0;
+  height: fit-content;
+  padding-top: 54px;
+}
+
+.allIcons {
+  display: flex;
+  margin: 0 0 8px 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.allIcons2 {
+  display: flex;
+  margin-left: 22px;
+  margin-bottom: 8px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.homeIcon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+
+.shareIcon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+
+.navIcon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+
+.headerHeart {
+  display: flex;
+  width: 28px;
+  height: 28px;
+}
+
+.headerPhoto {
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+
+.feedAndStory {
+  @include flexCenter;
+  flex-direction: column;
+  padding-top: 20px;
+  width: 614px;
+  height: 100%;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+  .profileInfo {
+    display: none;
   }
+}

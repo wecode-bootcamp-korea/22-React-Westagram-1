@@ -1,0 +1,44 @@
+.storyPlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
+}
+
+.buttonBackground {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Instagram_Stories_ring.svg/168px-Instagram_Stories_ring.svg.png');
+  width: 66px;
+  height: 66px;
+  background-size: 100%;
+}
+
+.friendStory {
+  background-color: transparent;
+  border-radius: 70%;
+  width: 66px;
+  height: 66px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 4px 0 0 0;
+  border: transparent;
+}
+
+.userPhoto {
+  width: 58px;
+  height: 58px;
+  background-repeat: no-repeat;
+  border-radius: 70%;
+  background-image: 100%;
+}
+
+.storyUser {
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  max-width: 74px;
+  color: #262626;
+  text-align: center;
+  text-overflow: ellipsis;
+  margin-top: 3px;
+}

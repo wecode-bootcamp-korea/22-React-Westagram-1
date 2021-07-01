@@ -1,0 +1,46 @@
+.person {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.personPhoto {
+  background-size: 100%;
+  border-radius: 70%;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  margin-left: 12px;
+}
+
+.personInfo {
+  display: flex;
+  margin-right: 40px;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.personName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.followOrNot {
+  margin-top: 1px;
+  font-size: 12px;
+  color: #8e8e8e;
+  font-weight: 400;
+}
+
+.followButoon {
+  border: 0;
+  background-color: #fafafa;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 14px;
+  color: #0095f6;
+  margin-left: 65px;
+}

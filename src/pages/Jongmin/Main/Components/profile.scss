@@ -1,0 +1,86 @@
+.profileInfo {
+  position: sticky;
+  width: 310px;
+  height: fit-content;
+  left: 804px;
+  top: 100px;
+  margin-top: 50px;
+}
+
+.profilePhotoArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+}
+
+.imageArea {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  background-size: 100%;
+  border-radius: 70%;
+  margin-right: 18px;
+  margin-left: 9px;
+}
+
+.profileDesc {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 13px;
+  margin-right: 80px;
+}
+
+.userId {
+  font-size: 15px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.userName {
+  margin-top: 1px;
+  font-size: 14px;
+  color: #8e8e8e;
+  font-weight: 400;
+}
+
+.change {
+  border: 0;
+  background-color: #fafafa;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 14px;
+  color: #0095f6;
+  margin-left: 15px;
+}
+
+.recommand {
+  display: flex;
+  flex-direction: row;
+  margin-top: 27px;
+}
+
+.forU {
+  color: #8e8e8e;
+  font-size: 14px;
+  margin-right: 110px;
+  margin-left: 14px;
+  font-weight: 600;
+}
+
+.showAll {
+  border: 0;
+  color: #262626;
+  background-color: #fafafa;
+  font-weight: 600;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+}

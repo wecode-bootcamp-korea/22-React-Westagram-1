@@ -1,0 +1,67 @@
+.talking {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  max-width: 614px;
+  overflow-wrap: break-word;
+}
+
+.commentUserId {
+  display: flex;
+  flex-direction: row;
+  color: #262626;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 3px;
+  width: 86px;
+  overflow-wrap: break-word;
+}
+
+.mentionUserComment {
+  display: flex;
+  flex-direction: row;
+  color: #262626;
+  width: 450px;
+  font-size: 14px;
+  margin-left: 1px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.deleteReply {
+  font-size: 12px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  width: 40px;
+  height: 25px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.likeBtn {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  width: 40px;
+  height: 25px;
+  margin-left: -25px;
+  margin-top: -3px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointe;
+}
+
+.heart {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+}
