@@ -13,6 +13,18 @@ class BottomFeed extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          comments: data,
+        });
+      });
+  }
+
   checkValid = () => {
     this.state.inputValue.length > 0
       ? this.setState({ isActive: true })
@@ -28,14 +40,14 @@ class BottomFeed extends React.Component {
     e.preventDefault();
     if (this.state.inputValue) {
       let arr = this.state.comments;
-      arr = arr.concat({ nickName: 'lee', content: this.state.inputValue });
+      arr = arr.concat({
+        id: arr.length + 1,
+        userName: 'lee',
+        content: this.state.inputValue,
+      });
       this.setState({ inputValue: '', comments: arr });
     }
   };
-
-  deleteCmt(i) {
-    this.setState(this.state.comments[i]);
-  }
 
   render() {
     return (
@@ -78,8 +90,13 @@ class BottomFeed extends React.Component {
                   <i className="far fa-trash-alt fa-sm"></i>
                 </div>
               </li>
-              {this.state.comments.map(arrayItem => (
-                <CommentedBox commentList={arrayItem} />
+              {this.state.comments.map(e => (
+                <CommentedBox
+                  key={e.id}
+                  commentId={e.id}
+                  userName={e.userName}
+                  content={e.content}
+                />
               ))}
             </ul>
           </div>
