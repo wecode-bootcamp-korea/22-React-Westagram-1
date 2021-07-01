@@ -1,23 +1,17 @@
 @import '../../../../../styles/variable.scss';
 
-.articleWrapper {
+.feed {
   display: flex;
-  flex: 2;
-  width: 602px;
-  margin-right: 20px;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 602px;
+  margin-bottom: 40px;
+  border: $default-border;
+  border-radius: 2px;
+  background-color: white;
 
-  .feed {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    max-width: 602px;
-    border: $default-border;
-    border-radius: 2px;
-    background-color: white;
-
-    .feed_img {
-      width: 600px;
-      height: 600px;
-    }
+  .feed_img {
+    width: 600px;
+    height: 600px;
   }
 }

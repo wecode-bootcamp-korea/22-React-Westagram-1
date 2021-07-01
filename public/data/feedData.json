@@ -1,0 +1,92 @@
+[
+  {
+    "feed_id": 1,
+    "profile_img": "images/euiyeon/euiyeon.jpg",
+    "profile_id": "euiyeonlee",
+    "feed_img": "images/euiyeon/feed.jpg",
+    "like_click": true,
+    "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
+    "like_user_profile_id": "wecode",
+    "post_user_mension": "퇴근길...",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "한강 이쁘네요",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "feed_id": 2,
+    "profile_img": "images/euiyeon/euiyeon.jpg",
+    "profile_id": "euiyeonlee",
+    "feed_img": "./images/euiyeon/feed.jpg",
+    "like_click": true,
+    "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
+    "like_user_profile_id": "wecode",
+    "post_user_mension": "퇴근길...",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "한강 이쁘네요",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "feed_id": 3,
+    "profile_img": "images/euiyeon/euiyeon.jpg",
+    "profile_id": "euiyeonlee",
+    "feed_img": "./images/euiyeon/feed.jpg",
+    "like_click": true,
+    "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
+    "like_user_profile_id": "wecode",
+    "post_user_mension": "퇴근길...",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "한강 이쁘네요",
+        "isLiked": false
+      }
+    ]
+  }
+]

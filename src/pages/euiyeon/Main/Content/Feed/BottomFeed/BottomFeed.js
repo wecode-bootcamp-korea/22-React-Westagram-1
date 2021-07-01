@@ -80,16 +80,6 @@ class BottomFeed extends React.Component {
           </div>
           <div className="commented_box">
             <ul className="comment_ul_list" id="cmt_ul">
-              <li className="comment_list">
-                <div className="comment_info_box">
-                  <span className="commented_id">lee</span>
-                  <span className="commented_comment">한강 이쁘네요</span>
-                </div>
-                <div className="comment_mod_box">
-                  <i className="far fa-heart fa-sm"></i>
-                  <i className="far fa-trash-alt fa-sm"></i>
-                </div>
-              </li>
               {this.state.comments.map(e => (
                 <CommentedBox
                   key={e.id}
