@@ -1,25 +1,21 @@
 .main_body {
   .mainWrap {
     .main {
-      div.feeds {
-        .feeds_text_top {
-          display: flex;
-          margin-top: 5px;
-          align-items: flex-start;
-          flex-direction: column;
-          strong {
-            font-weight: bolder;
-            margin-right: 5px;
-          }
-          .comment_list {
-            margin-bottom: 10px;
-            margin-left: 13px;
-            .comment_box {
-              margin-bottom: 5px;
-            }
-            .comment_id {
-              margin-right: 5px;
-              font-weight: bolder;
+      .feeds {
+        .feeds_text {
+          .feed_comment {
+            .comment_list {
+              margin-left: 15px;
+              margin-bottom: 15px;
+              font-weight: normal;
+              font-size: 16px;
+              .comment_box {
+                margin-bottom: 5px;
+              }
+              .comment_id {
+                margin-right: 5px;
+                font-weight: bolder;
+              }
             }
           }
         }

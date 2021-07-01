@@ -12,18 +12,18 @@ class Main extends React.Component {
       feed: [
         {
           id: 'zzz_yk',
-          mention: 'love cat',
-          img: '/images/yunkyung/cat.jpg',
+          mention: '엽사',
+          img: '/images/yunkyung/friend1.jpg',
         },
         {
           id: 'zzz_yk',
-          mention: 'love cat',
-          img: '/images/yunkyung/cat.jpg',
+          mention: '보고싶은 칭구들',
+          img: '/images/yunkyung/friend2.jpg',
         },
         {
           id: 'zzz_yk',
-          mention: 'love cat',
-          img: '/images/yunkyung/cat.jpg',
+          mention: '한강에서',
+          img: '/images/yunkyung/friend3.jpg',
         },
       ],
     };
@@ -37,9 +37,14 @@ class Main extends React.Component {
         <div className="main_body">
           <div className="mainWrap">
             <div className="main">
-              {feed.map(feeds => {
+              {feed.map((feeds, key) => {
                 return (
-                  <Feed id={feeds.id} mention={feeds.mention} img={feeds.img} />
+                  <Feed
+                    key={key}
+                    id={feeds.id}
+                    mention={feeds.mention}
+                    img={feeds.img}
+                  />
                 );
               })}
             </div>

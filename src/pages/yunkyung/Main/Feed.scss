@@ -28,61 +28,11 @@ $background_color_3: white;
       border: 1px solid lightgray;
       flex-wrap: wrap;
       flex-direction: row;
-      .feeds_left {
-        display: flex;
-        margin: 5px;
-        align-items: center;
-        img {
-          width: 33px;
-          height: 33px;
-          margin: 10px;
-          border-radius: 16px;
-        }
-        h1 {
-          margin-left: 7px;
-          font-size: 18px;
-          font-weight: bolder;
-        }
-      }
-      .feeds_right {
-        p {
-          margin: 13px;
-          margin-left: 330px;
-          font-size: 30px;
-        }
-      }
-      .feeds_content {
-        margin: 0;
-        img {
-          display: flex;
-          width: 498px;
-        }
-      }
-      .feeds_icons {
-        display: -webkit-inline-box;
-        img {
-          padding-top: 7px;
-          padding-left: 10px;
-        }
-      }
-      .feeds_icons_left {
-        img {
-          width: 35px;
-          height: 33px;
-          margin: 3px;
-        }
-      }
-      .feeds_icons_right {
-        img {
-          width: 35px;
-          height: 33px;
-          margin: 3px;
-          margin-left: 315px;
-        }
-      }
       .feeds_text {
-        width: 100%;
-        border-bottom: 1px solid lightgray;
+        display: flex;
+        margin-top: 5px;
+        align-items: flex-start;
+        flex-direction: column;
         img {
           position: absolute;
           width: 20px;
@@ -96,44 +46,113 @@ $background_color_3: white;
           margin-left: 40px;
           font-weight: normal;
           font-size: 15px;
+          strong {
+            font-weight: bolder;
+            font-size: 17px;
+          }
         }
         h2 {
           margin-top: 10px;
           margin-left: 15px;
           font-weight: normal;
           font-size: 15px;
+          strong {
+            font-weight: bolder;
+            margin-right: 5px;
+          }
         }
-        p {
-          margin-top: 9px;
-          margin-left: 15px;
-          margin-bottom: 15px;
-          color: $color_1;
-          font-weight: normal;
+        h3 {
           font-size: 15px;
+          padding: 10px;
+          margin-left: 5px;
+          color: gray;
         }
-        span {
-          padding-left: 2px;
-          padding-bottom: 5px;
-          font-size: 14px;
+
+        .feed_comment {
+          display: flex;
+          margin-top: 5px;
+          align-items: flex-start;
+          flex-direction: column;
+          span {
+            padding-left: 2px;
+            padding-bottom: 5px;
+            font-size: 14px;
+          }
         }
       }
-      .reply {
-        display: flex;
+    }
 
-        input {
-          display: flex;
-          width: 400px;
-          height: 45px;
-          margin-left: 20px;
-          border: none;
-          border-radius: 2px;
-        }
-        .reply-btn {
-          width: 70px;
-          color: gray;
-          background-color: white;
-          border: none;
-        }
+    .feeds_top_left {
+      display: flex;
+      margin: 5px;
+      align-items: center;
+      img {
+        width: 33px;
+        height: 33px;
+        margin: 10px;
+        border-radius: 16px;
+      }
+      h1 {
+        margin-left: 7px;
+        font-size: 18px;
+        font-weight: bolder;
+      }
+    }
+    .feeds_top_right {
+      p {
+        margin: 13px;
+        margin-left: 330px;
+        font-size: 30px;
+      }
+    }
+    .feeds_content {
+      margin: 0;
+      img {
+        display: flex;
+        width: 498px;
+      }
+    }
+    .feeds_icons {
+      display: -webkit-inline-box;
+      img {
+        padding-top: 7px;
+        padding-left: 10px;
+      }
+    }
+    .feeds_icons_left {
+      img {
+        width: 35px;
+        height: 33px;
+        margin: 3px;
+      }
+    }
+    .feeds_icons_right {
+      img {
+        width: 35px;
+        height: 33px;
+        margin: 3px;
+        margin-left: 315px;
+      }
+    }
+
+    .reply {
+      display: flex;
+      width: 100%;
+      border-top: 1px solid lightgray;
+
+      input {
+        display: flex;
+        width: 400px;
+        height: 45px;
+        margin-left: 20px;
+        border: none;
+        border-radius: 2px;
+      }
+      .reply-btn {
+        width: 70px;
+        color: gray;
+        background-color: white;
+        border: none;
       }
     }
   }

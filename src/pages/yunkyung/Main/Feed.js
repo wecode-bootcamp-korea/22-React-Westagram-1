@@ -50,15 +50,15 @@ class Feed extends React.Component {
     const { commentList, comment } = this.state;
     return (
       <div className="feeds">
-        <div className="feeds_left">
+        <div className="feeds_top_left">
           <img alt="고양이 프로필 사진" src="./images/yunkyung/cat1.png" />
           <h1>{this.props.id}</h1>
         </div>
-        <div className="feeds_right">
+        <div className="feeds_top_right">
           <p>…</p>
         </div>
         <div className="feeds_content">
-          <img alt="고양이 feed 사진" src={this.props.img} />
+          <img alt="feed 사진" src={this.props.img} />
         </div>
         <div className="feeds_icons">
           <div className="feeds_icons_left">
@@ -83,19 +83,16 @@ class Feed extends React.Component {
           </div>
         </div>
         <div className="feeds_text">
-          <div className="feeds_text_top">
-            <img
-              alt="고양이 feed 프로필 사진"
-              src="./images/yunkyung/cat1.png"
-            />
-            <h1>
-              <strong>zzz_yk</strong>님 외 <strong>35명</strong>이 좋아합니다
-            </h1>
-            <h2>
-              <strong>zzz_yk</strong>
-              {this.props.mention}
-            </h2>
-            <p>42분 전</p>
+          <img alt="고양이 feed 프로필 사진" src="./images/yunkyung/cat1.png" />
+          <h1>
+            <strong>zzz_yk</strong>님 외 <strong>35명</strong>이 좋아합니다
+          </h1>
+          <h2>
+            <strong>zzz_yk</strong>
+            {this.props.mention}
+          </h2>
+          <h3>42분 전</h3>
+          <div className="feed_comment">
             <Comment commentList={commentList} />
           </div>
         </div>
@@ -103,7 +100,6 @@ class Feed extends React.Component {
           <form onSubmit={this.addComment}>
             <input
               type="text"
-              id="input"
               value={comment}
               placeholder="댓글 달기..."
               onChange={this.writeComment}
