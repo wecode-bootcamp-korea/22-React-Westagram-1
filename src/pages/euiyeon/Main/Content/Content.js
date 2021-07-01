@@ -32,10 +32,6 @@ class Content extends React.Component {
             <section className="articleWrapper">
               {this.state.feeds.map(e => (
                 <Feed
-                  key={e.id}
-                  commentId={e.id}
-                  userName={e.userName}
-                  content={e.content}
                   feed_id={e.feed_id}
                   profile_img={e.profile_img}
                   profile_id={e.profile_id}

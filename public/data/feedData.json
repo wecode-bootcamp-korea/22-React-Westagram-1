@@ -4,7 +4,7 @@
     "profile_img": "images/euiyeon/euiyeon.jpg",
     "profile_id": "euiyeonlee",
     "feed_img": "images/euiyeon/feed.jpg",
-    "like_click": true,
+    "like_click": false,
     "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
     "like_user_profile_id": "wecode",
     "post_user_mension": "퇴근길...",
@@ -12,7 +12,7 @@
       {
         "id": 1,
         "userName": "wecode",
-        "content": "Welcome to world best coding bootcamp!",
+        "content": "피드사진 1",
         "isLiked": true
       },
       {
@@ -32,12 +32,12 @@
   {
     "feed_id": 2,
     "profile_img": "images/euiyeon/euiyeon.jpg",
-    "profile_id": "euiyeonlee",
-    "feed_img": "./images/euiyeon/feed.jpg",
-    "like_click": true,
+    "profile_id": "lee",
+    "feed_img": "./images/euiyeon/euiyeon.jpg",
+    "like_click": false,
     "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
     "like_user_profile_id": "wecode",
-    "post_user_mension": "퇴근길...",
+    "post_user_mension": "...",
     "comments": [
       {
         "id": 1,
@@ -64,7 +64,7 @@
     "profile_img": "images/euiyeon/euiyeon.jpg",
     "profile_id": "euiyeonlee",
     "feed_img": "./images/euiyeon/feed.jpg",
-    "like_click": true,
+    "like_click": false,
     "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
     "like_user_profile_id": "wecode",
     "post_user_mension": "퇴근길...",
