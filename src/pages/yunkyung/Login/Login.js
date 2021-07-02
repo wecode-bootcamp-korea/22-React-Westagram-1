@@ -12,10 +12,9 @@ class Login extends React.Component {
   }
 
   handleChange = e => {
-    const userId = e.target.name;
-    const userPw = e.target.value;
+    const { name, value } = e.target;
     this.setState({
-      [userId]: userPw,
+      [name]: value,
     });
   };
 
@@ -41,7 +40,6 @@ class Login extends React.Component {
         } else {
           alert('로그인 실패');
         }
-        console.log('결과: ', result);
       });
   };
 
