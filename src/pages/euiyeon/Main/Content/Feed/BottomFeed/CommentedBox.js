@@ -2,8 +2,7 @@ import React from 'react';
 
 class CommentedBox extends React.Component {
   render() {
-    const { userName, content, key } = this.props;
-    console.log(this.props);
+    const { userName, content } = this.props;
 
     return (
       <li className="comment_list">

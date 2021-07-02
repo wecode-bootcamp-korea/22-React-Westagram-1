@@ -39,6 +39,7 @@ class Content extends React.Component {
                   like_click={e.like_click}
                   like_user_profile_img={e.like_user_profile_img}
                   like_user_profile_id={e.like_user_profile_id}
+                  like_num={e.like_num}
                   post_user_mension={e.post_user_mension}
                   comments={e.comments}
                 />

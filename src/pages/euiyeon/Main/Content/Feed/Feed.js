@@ -13,11 +13,10 @@ class Feed extends React.Component {
       like_click,
       like_user_profile_img,
       like_user_profile_id,
+      like_num,
       post_user_mension,
       comments,
     } = this.props;
-    console.log(this.props);
-
     return (
       <article className="feed">
         <TopFeed profile_img={profile_img} profile_id={profile_id} />
@@ -26,6 +25,8 @@ class Feed extends React.Component {
           like_click={like_click}
           like_user_profile_img={like_user_profile_img}
           like_user_profile_id={like_user_profile_id}
+          like_num={like_num}
+          profile_id={profile_id}
           post_user_mension={post_user_mension}
           comments={comments}
         />

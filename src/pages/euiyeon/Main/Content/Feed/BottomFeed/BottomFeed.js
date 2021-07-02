@@ -12,18 +12,9 @@ class BottomFeed extends React.Component {
       comments: [],
     };
   }
-
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/data/commentData.json', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         comments: data,
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    this.setState({ comments: this.props.comments });
+  }
 
   checkValid = () => {
     this.state.inputValue.length > 0
@@ -37,23 +28,33 @@ class BottomFeed extends React.Component {
   };
 
   handleCommentPost = e => {
-    e.preventDefault();
+    const r = this.state.comments;
     if (this.state.inputValue) {
-      let arr = this.state.comments;
-      arr = arr.concat({
-        id: arr.length + 1,
+      const s = r.concat({
+        id: r.length + 1,
         userName: 'lee',
         content: this.state.inputValue,
+        isLiked: false,
       });
-      this.setState({ inputValue: '', comments: arr });
+      this.setState({ inputValue: '', comments: s });
+
+      e.preventDefault();
+
+      // console.log(this.state.comments);
+
+      // console.log(this.state.comments);
+      // console.log(s);
     }
   };
 
   render() {
+    console.log(this.state.comments, 'sss');
     const {
       like_click,
       like_user_profile_img,
       like_user_profile_id,
+      like_num,
+      profile_id,
       post_user_mension,
       comments,
     } = this.props;
@@ -76,23 +77,23 @@ class BottomFeed extends React.Component {
             />
             <span className="profile_id_num">{like_user_profile_id}</span>
             <span>님 외 </span>
-            <span className="profile_id_num">10명</span>
+            <span className="profile_id_num">{like_num}명</span>
             <span>이 좋아합니다</span>
           </div>
           <div className="posting">
             <span className="posting_id" id="postId">
-              euiyeonlee
+              {profile_id}
             </span>
             <span className="posting_comment">{post_user_mension}</span>
           </div>
           <div className="commented_box">
             <ul className="comment_ul_list" id="cmt_ul">
-              {comments.map(e => (
+              {this.state.comments.map(e => (
                 <CommentedBox
-                  key={e.id}
                   commentId={e.id}
                   userName={e.userName}
                   content={e.content}
+                  isLiked={e.isLiked}
                 />
               ))}
             </ul>

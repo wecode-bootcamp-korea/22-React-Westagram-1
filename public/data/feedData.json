@@ -5,20 +5,21 @@
     "profile_id": "euiyeonlee",
     "feed_img": "images/euiyeon/feed.jpg",
     "like_click": false,
-    "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
+    "like_user_profile_img": "images/euiyeon/p1.jpg",
     "like_user_profile_id": "wecode",
+    "like_num": 138,
     "post_user_mension": "퇴근길...",
     "comments": [
       {
         "id": 1,
         "userName": "wecode",
-        "content": "피드사진 1",
-        "isLiked": true
+        "content": "나도 퇴근하고 싶다..",
+        "isLiked": false
       },
       {
         "id": 2,
-        "userName": "joonsikyang",
-        "content": "Hi there.",
+        "userName": "hmson7",
+        "content": "영국은 비옴",
         "isLiked": false
       },
       {
@@ -31,30 +32,31 @@
   },
   {
     "feed_id": 2,
-    "profile_img": "images/euiyeon/euiyeon.jpg",
-    "profile_id": "lee",
-    "feed_img": "./images/euiyeon/euiyeon.jpg",
+    "profile_img": "images/euiyeon/JYP.jpeg",
+    "profile_id": "JYP",
+    "feed_img": "./images/euiyeon/football.jpg",
     "like_click": false,
-    "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
-    "like_user_profile_id": "wecode",
-    "post_user_mension": "...",
+    "like_user_profile_img": "images/euiyeon/p2.jpg",
+    "like_user_profile_id": "lee",
+    "like_num": 76,
+    "post_user_mension": "풋살하실분 ⚽️~",
     "comments": [
       {
         "id": 1,
-        "userName": "wecode",
-        "content": "Welcome to world best coding bootcamp!",
+        "userName": "lee",
+        "content": "몇시 어디?",
         "isLiked": true
       },
       {
         "id": 2,
-        "userName": "joonsikyang",
-        "content": "Hi there.",
+        "userName": "hmson7",
+        "content": "ㄱㄱ",
         "isLiked": false
       },
       {
         "id": 3,
         "userName": "jayPark",
-        "content": "한강 이쁘네요",
+        "content": "콜",
         "isLiked": false
       }
     ]
@@ -63,16 +65,17 @@
     "feed_id": 3,
     "profile_img": "images/euiyeon/euiyeon.jpg",
     "profile_id": "euiyeonlee",
-    "feed_img": "./images/euiyeon/feed.jpg",
+    "feed_img": "./images/euiyeon/coding.jpg",
     "like_click": false,
-    "like_user_profile_img": "images/euiyeon/euiyeon.jpg",
+    "like_user_profile_img": "images/euiyeon/p3.jpg",
     "like_user_profile_id": "wecode",
-    "post_user_mension": "퇴근길...",
+    "like_num": 106,
+    "post_user_mension": "주말엔 불코딩 💻🔥",
     "comments": [
       {
         "id": 1,
         "userName": "wecode",
-        "content": "Welcome to world best coding bootcamp!",
+        "content": "Hello World!",
         "isLiked": true
       },
       {
