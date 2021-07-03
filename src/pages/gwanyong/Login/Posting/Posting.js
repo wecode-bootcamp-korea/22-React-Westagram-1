@@ -2,7 +2,6 @@ import React from 'react';
 
 class Posting extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <>
         <div>

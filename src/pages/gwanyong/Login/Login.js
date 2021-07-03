@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import Posting from './Posting/Posting';
 import './Login.scss';
-import '../../../styles/common.scss';
 
 class Login extends React.Component {
   constructor(props) {
@@ -41,9 +40,8 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    let id = this.state.id;
-    let pw = this.state.pw;
-    this.isEmail(id) && this.isPassword(pw)
+    const { id, pw } = this.state;
+    this.validateEmail(id) && this.validatePassword(pw)
       ? this.props.history.push('/MainGwanyong')
       : alert('id 또는 비밀번호를 확인해주세요!');
   };
@@ -53,19 +51,20 @@ class Login extends React.Component {
       [e.target.name]: e.target.value,
     });
 
-    return this.isEmail(this.state.id) && this.isPassword(this.state.pw)
+    return this.validateEmail(this.state.id) &&
+      this.validatePassword(this.state.pw)
       ? this.setState({ btnColor: 'rgb(83, 150, 246)' })
       : this.state.btnColor;
   };
 
-  isEmail = value => {
+  validateEmail = value => {
     let regExp =
       /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
     return regExp.test(value);
   };
 
-  isPassword = value => {
+  validatePassword = value => {
     let regExp = /[0-9]{5,10}$/;
     return regExp.test(value);
   };

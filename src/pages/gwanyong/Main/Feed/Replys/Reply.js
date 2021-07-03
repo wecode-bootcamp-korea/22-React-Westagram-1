@@ -5,6 +5,29 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './Replys.scss';
 
 class Reply extends React.Component {
+  clickHeart = id => {
+    const newFeed = [...this.props.feeds];
+    newFeed[this.props.feedIdx].replis = newFeed[this.props.feedIdx].replis.map(
+      reply => {
+        if (reply.id === id) {
+          reply.isLiked = !reply.isLiked;
+        }
+        return reply;
+      }
+    );
+
+    this.props.changeState(newFeed);
+  };
+
+  deleteReply = index => {
+    const newFeed = [...this.props.feeds];
+    newFeed[this.props.feedIdx].replis = newFeed[
+      this.props.feedIdx
+    ].replis.filter(element => {
+      return element.id !== index;
+    });
+    this.props.changeState(newFeed);
+  };
   render() {
     const { replyIdx } = this.props;
 
@@ -19,13 +42,13 @@ class Reply extends React.Component {
           <FontAwesomeIcon
             className={this.props.isLiked ? 'heartActive' : 'heart'}
             icon={redheart}
-            onClick={() => this.props.clickHeart(replyIdx)}
+            onClick={() => this.clickHeart(replyIdx)}
           />
 
           <FontAwesomeIcon
             className="trash"
             icon={faTrash}
-            onClick={() => this.props.deleteReply(replyIdx)}
+            onClick={() => this.deleteReply(replyIdx)}
           />
         </div>
       </li>

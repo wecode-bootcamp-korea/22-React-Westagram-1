@@ -9,6 +9,23 @@
     margin-top: 32px;
     padding-bottom: 32px;
 
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 100%;
+      }
+      #leftImg {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 278px) {
+      #downloadBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
     #rightForm {
       width: 350px;
       height: 615px;
@@ -151,22 +168,5 @@
 
   .info-text {
     font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
-  #leftImg {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 278px) {
-  #downloadBtn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }
