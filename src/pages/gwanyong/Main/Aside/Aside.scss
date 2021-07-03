@@ -1,0 +1,63 @@
+@import '../../../../styles/variable.scss';
+
+#sideMenu {
+  width: 293px;
+  height: 1010px;
+
+  .profileBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 293px;
+    height: 56px;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+
+    .myInfo {
+      display: flex;
+      align-items: center;
+
+      .myImg {
+        width: 56px;
+        margin-right: 18px;
+        border-radius: 50%;
+      }
+
+      .myId {
+        font-weight: bold;
+      }
+      .myName {
+        color: $font-gray;
+      }
+    }
+
+    .accountChangeBtn {
+      border: none;
+      color: $btn-color-active;
+      background-color: transparent;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .recommendHead {
+    display: flex;
+    justify-content: space-between;
+    width: 293px;
+    height: 11px;
+    margin-bottom: 14px;
+    padding: 4px 16px;
+
+    .recommendTxt {
+      color: $font-gray;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .viewAll {
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}

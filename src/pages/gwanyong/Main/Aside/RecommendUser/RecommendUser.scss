@@ -1,0 +1,41 @@
+@import '../../../../../styles/variable.scss';
+.recommendList {
+  padding: 8px 0;
+
+  .recommendUser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+
+    .userInfo {
+      display: flex;
+
+      .userImg {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 14px;
+      }
+
+      .userId {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .relation {
+        font-size: 12px;
+        color: $font-gray;
+      }
+    }
+
+    .followBtn {
+      border: none;
+      color: $btn-color-active;
+      background-color: transparent;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
