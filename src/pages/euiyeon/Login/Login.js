@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './Login.scss';
-import '../../../styles/variable.scss';
 
 class Login extends React.Component {
   constructor() {
@@ -9,22 +8,14 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
-      isActive: false,
     };
   }
 
-  checkValid = () => {
-    this.state.id.includes('@') && this.state.pw.length >= 6
-      ? this.setState({ isActive: true })
-      : this.setState({ isActive: false });
-  };
-
-  handleInputValue = e => {
-    this.setState({ id: e.target.value });
-  };
-
-  handlePwdValue = e => {
-    this.setState({ pw: e.target.value });
+  handleInput = e => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value,
+    });
   };
 
   goToMain = e => {
@@ -39,7 +30,6 @@ class Login extends React.Component {
     })
       .then(response => response.json())
       .then(result => {
-        console.log('결과 : ', result);
         if (result.message === 'SUCCESS') {
           this.props.history.push('/MainEuiyeon');
         } else {
@@ -63,9 +53,10 @@ class Login extends React.Component {
                   className="input"
                   id="idInput"
                   type="text"
+                  name="id"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                   onKeyUp={this.checkValid}
-                  onChange={this.handleInputValue}
+                  onChange={this.handleInput}
                 />
               </div>
               <div className="inputPassword">
@@ -73,9 +64,10 @@ class Login extends React.Component {
                   className="input"
                   id="pwInput"
                   type="password"
+                  name="pw"
                   placeholder="비밀번호 (6자리 이상)"
                   onKeyUp={this.checkValid}
-                  onChange={this.handlePwdValue}
+                  onChange={this.handleInput}
                 />
               </div>
             </div>
@@ -83,7 +75,9 @@ class Login extends React.Component {
             <div className="buttonWrap">
               <button
                 className={
-                  this.state.isActive ? 'loginBtn' : 'loginBtn_disabled'
+                  this.state.id.includes('@') && this.state.pw.length >= 6
+                    ? 'loginBtn'
+                    : 'loginBtn_disabled'
                 }
                 type="button"
                 onClick={this.goToMain}

@@ -8,7 +8,6 @@ class BottomFeed extends React.Component {
     super();
     this.state = {
       inputValue: '',
-      isActive: false,
       comments: [],
     };
   }
@@ -16,34 +15,22 @@ class BottomFeed extends React.Component {
     this.setState({ comments: this.props.comments });
   }
 
-  checkValid = () => {
-    this.state.inputValue.length > 0
-      ? this.setState({ isActive: true })
-      : this.setState({ isActive: false });
-  };
-
   handleCommentValue = e => {
     const { value } = e.target;
     this.setState({ inputValue: value });
   };
 
   handleCommentPost = e => {
-    const r = this.state.comments;
+    const oldComments = this.state.comments;
     if (this.state.inputValue) {
-      const s = r.concat({
-        id: r.length + 1,
+      const newComments = oldComments.concat({
+        id: oldComments.length + 1,
         userName: 'lee',
         content: this.state.inputValue,
         isLiked: false,
       });
-      this.setState({ inputValue: '', comments: s });
-
+      this.setState({ inputValue: '', comments: newComments });
       e.preventDefault();
-
-      // console.log(this.state.comments);
-
-      // console.log(this.state.comments);
-      // console.log(s);
     }
   };
 
@@ -88,12 +75,12 @@ class BottomFeed extends React.Component {
           </div>
           <div className="commented_box">
             <ul className="comment_ul_list" id="cmt_ul">
-              {this.state.comments.map(e => (
+              {this.state.comments.map(comment => (
                 <CommentedBox
-                  commentId={e.id}
-                  userName={e.userName}
-                  content={e.content}
-                  isLiked={e.isLiked}
+                  commentId={comment.id}
+                  userName={comment.userName}
+                  content={comment.content}
+                  isLiked={comment.isLiked}
                 />
               ))}
             </ul>
@@ -110,7 +97,7 @@ class BottomFeed extends React.Component {
           />
           <button
             className={
-              this.state.isActive
+              this.state.inputValue.length > 0
                 ? 'comment_input_btn'
                 : 'comment_input_btn_disabled'
             }
