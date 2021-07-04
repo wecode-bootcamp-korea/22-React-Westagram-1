@@ -1,0 +1,17 @@
+@import '../../../../../styles/variable.scss';
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 602px;
+  margin-bottom: 40px;
+  border: $default-border;
+  border-radius: 2px;
+  background-color: white;
+
+  .feed_img {
+    width: 600px;
+    height: 600px;
+  }
+}

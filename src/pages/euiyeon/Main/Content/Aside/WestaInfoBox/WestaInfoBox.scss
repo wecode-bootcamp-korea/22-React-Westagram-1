@@ -1,0 +1,12 @@
+@import '../../../../../../styles/variable.scss';
+
+.insta_info_box {
+  margin-top: 20px;
+  padding: 0 3px;
+  color: $font-gray;
+  font-size: 11px;
+
+  .copyright {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,118 @@
+@import '../../../../../../styles/variable.scss';
+
+.feed_info {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px 10px 15px;
+
+  .fas {
+    color: #ed4857;
+  }
+
+  .feed_icon_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 2;
+    padding-bottom: 12px;
+    font-size: larger;
+
+    .feed_icon_bar_left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100px;
+    }
+  }
+
+  .whoIsLike {
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    .profile_img_sm {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+    }
+
+    .profile_id_num {
+      padding-left: 5px;
+      font-weight: bold;
+    }
+  }
+
+  .posting {
+    display: flex;
+    flex: 1;
+    padding-top: 10px;
+  }
+
+  .posting_id {
+    font-weight: bold;
+  }
+
+  .posting_comment {
+    padding-left: 5px;
+  }
+
+  .commented_box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+
+    .comment_list {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0;
+
+      .commented_id {
+        font-weight: bold;
+      }
+
+      .commented_comment {
+        padding-left: 5px;
+      }
+
+      .comment_mod_box {
+        display: flex;
+        justify-content: space-between;
+        width: 30px;
+      }
+    }
+  }
+}
+
+.comment_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+  border-top: $default-border;
+
+  .input_comment {
+    height: 30px;
+    width: 560px;
+    border: none;
+    font-size: $font-size;
+  }
+
+  .comment_input_btn {
+    height: 30px;
+    width: 50px;
+    border: none;
+    background-color: white;
+    color: $btn-color-active;
+    font-size: $font-size;
+  }
+
+  .comment_input_btn_disabled {
+    height: 30px;
+    width: 50px;
+    border: none;
+    background-color: white;
+    color: $btn-color-disable;
+    font-size: $font-size;
+  }
+}

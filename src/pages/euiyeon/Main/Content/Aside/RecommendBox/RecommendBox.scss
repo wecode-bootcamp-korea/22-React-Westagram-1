@@ -1,0 +1,10 @@
+.recommend_user {
+  display: flex;
+  justify-content: space-between;
+
+  .user_profile_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
