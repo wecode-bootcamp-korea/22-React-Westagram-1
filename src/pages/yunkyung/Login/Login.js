@@ -7,7 +7,6 @@ class Login extends React.Component {
     this.state = {
       userId: '',
       userPw: '',
-      btnControl: 'disabled',
     };
   }
 
@@ -20,7 +19,7 @@ class Login extends React.Component {
 
   // 로그인 & 화원가입 성공 여부
   signUpFetch = () => {
-    fetch('http://10.58.5.217:8000/users/signin', {
+    fetch('/data/commentData.json', {
       method: 'POST',
       body: JSON.stringify({
         nick_name: 'zzzyk',
