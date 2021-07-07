@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "userName": "ddajung",
+    "content": "바보",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userName": "bora",
+    "content": "바보22",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "userName": "hyogyung",
+    "content": "바보333",
+    "isLiked": false
+  },
+  {
+    "id": 4,
+    "userName": "aespa",
+    "content": "next level~",
+    "isLiked": false
+  }
+]
